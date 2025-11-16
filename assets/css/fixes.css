@@ -8,10 +8,12 @@
    Ensures logo (assets/logo.png) displays correctly
    across all screen sizes with background fallback
    
-   Design inspiration: Apple, Dropbox, Stripe
+   Design inspiration: Apple (apple.com), Dropbox (dropbox.com), Stripe (stripe.com)
    - Clean spacing with fluid layouts
    - Minimal borders, strong brand visibility
    - Responsive sizing with proper constraints
+   
+   Related: GitHub issue - Fix missing logo in header & footer
    ================================================== */
 
 /* Header Logo - Modern responsive styling */
