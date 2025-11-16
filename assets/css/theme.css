@@ -6,6 +6,9 @@
 /* Import consolidated design tokens */
 @import url('../../src/styles/tokens.css');
 
+/* Import hero pattern utilities */
+@import url('_hero-patterns.css');
+
 /* ============================================
    Token Compatibility Mappings
    Maps new token names to existing --ts-* names

@@ -149,3 +149,43 @@ The token system uses CSS Custom Properties (CSS variables), which are supported
 For older browsers, the site will use fallback values defined in the CSS.
 
 ---
+
+## Unified Hero Component
+
+All pages now use `{% include unified-hero.html %}`.  
+Front‑matter fields supported:
+
+| Field | Description |
+|-------|-------------|
+| `hero_eyebrow` | Small upper‑text line |
+| `hero_title` | Main headline (falls back to `page.title`) |
+| `hero_summary` | Lead paragraph |
+| `hero_cred_line_1` / `hero_cred_line_2` | Optional credential lines |
+| `hero_primary_url` / `hero_primary_label` | Primary CTA |
+| `hero_secondary_url` / `hero_secondary_label` | Secondary CTA |
+| `hero_kpis` (array) | KPI cards – each item needs `label` & `text` |
+| `hero_bg_pattern` | Slug of a pattern file in `assets/img/patterns/` (e.g. `sacred-tile`). If omitted, `default` is used. |
+| `hide_hero: true` | Skip the hero on a page. |
+
+### Adding a new background pattern
+
+1. Drop the SVG/PNG into `assets/img/patterns/` (e.g. `my‑pattern.svg`).  
+2. Add a class to `assets/css/_hero-patterns.css`:  
+
+```css
+.hero-bg-my-pattern .hero-surface::before {
+  background-image: 
+    url('/assets/img/patterns/my-pattern.svg'),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(26, 200, 122, 0.35),
+      transparent 55%
+    );
+}
+```
+
+3. Reference the slug in front‑matter: `hero_bg_pattern: "my-pattern"`.
+
+## CI
+
+Every PR runs ESLint, HTMLHint, and a full Jekyll build. Fix any lint errors before merging.

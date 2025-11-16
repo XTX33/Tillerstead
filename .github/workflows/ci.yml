@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node & npm
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install npm deps
+        run: npm ci
+
+      # Lint
+      - name: Lint (ESLint + HTMLHint)
+        run: npm run lint
+
+      # Ruby/Jekyll
+      - name: Install Ruby & Bundler
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Bundle install
+        run: bundle install
+
+      - name: Jekyll build
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
