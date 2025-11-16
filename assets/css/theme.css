@@ -1459,9 +1459,26 @@ select {
   color: var(--ts-text);
   font-family: var(--ts-font-sans);
   font-size: 0.95rem;
+  line-height: 1.5;
   transition:
     border-color var(--ts-transition-fast),
-    box-shadow var(--ts-transition-fast);
+    box-shadow var(--ts-transition-fast),
+    background-color var(--ts-transition-fast);
+  /* Better touch targets */
+  min-height: 44px;
+}
+
+/* Invalid state */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown),
+select:invalid {
+  border-color: #ef4444;
+}
+
+/* Valid state */
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+  border-color: var(--ts-primary);
 }
 
 input::placeholder,

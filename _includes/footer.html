@@ -1,4 +1,4 @@
-<footer class="site-footer ts-footer ts-theme" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
+<footer class="site-footer ts-footer ts-theme" role="contentinfo" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
   <meta itemprop="name" content="Tillerstead LLC">
   <meta itemprop="@id" content="{{ site.url }}/#contractor">
   <meta itemprop="url" content="{{ site.url }}/">
@@ -45,14 +45,14 @@
       <h2 class="footer-heading">Licensed New Jersey contractor</h2>
       <p class="footer-hic">Licensed New Jersey Home Improvement Contractor — HIC #{{ site.company.hic }}</p>
 
-      <address class="footer-address">
-        <span>{{ site.company.address_line }}</span><br>
-        <span>{{ site.company.address_locality }}</span>, <span>{{ site.company.address_region }}</span> <span>{{ site.company.address_postal_code }}</span>
+      <address class="footer-address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">{{ site.company.address_line }}</span><br>
+        <span itemprop="addressLocality">{{ site.company.address_locality }}</span>, <span itemprop="addressRegion">{{ site.company.address_region }}</span> <span itemprop="postalCode">{{ site.company.address_postal_code }}</span>
       </address>
 
       <p class="footer-contact">
-        <a href="tel:{{ site.company.phone_link }}">{{ site.company.phone_display }}</a><br>
-        <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+        <a href="tel:{{ site.company.phone_link }}" itemprop="telephone">{{ site.company.phone_display }}</a><br>
+        <a href="mailto:{{ site.company.email }}" itemprop="email">{{ site.company.email }}</a>
       </p>
     </section>
   </div>

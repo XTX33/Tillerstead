@@ -64,13 +64,14 @@ hero_kpis:
       <div class="form-grid">
         <div class="form-field">
           <label for="name">
-            Full name<span aria-hidden="true">*</span>
+            Full name<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
           </label>
           <input
             id="name"
             name="name"
             type="text"
             required
+            aria-required="true"
             autocomplete="name"
             placeholder="Your name"
           >
@@ -91,41 +92,46 @@ hero_kpis:
 
         <div class="form-field">
           <label for="email">
-            Email<span aria-hidden="true">*</span>
+            Email<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
           </label>
           <input
             id="email"
             name="email"
             type="email"
             required
+            aria-required="true"
             autocomplete="email"
             placeholder="you@example.com"
+            inputmode="email"
           >
         </div>
 
         <div class="form-field">
           <label for="phone">
-            Phone<span aria-hidden="true">*</span>
+            Phone<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
           </label>
           <input
             id="phone"
             name="phone"
             type="tel"
             required
+            aria-required="true"
             autocomplete="tel"
+            inputmode="tel"
             placeholder="{{ site.company.phone_display | default: '(609) 665-9350' }}"
           >
         </div>
 
         <div class="form-field">
           <label for="city">
-            City / area<span aria-hidden="true">*</span>
+            City / area<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
           </label>
           <input
             id="city"
             name="city"
             type="text"
             required
+            aria-required="true"
             autocomplete="address-level2"
             placeholder="e.g., Galloway, Atlantic City, Brigantine"
           >
@@ -173,13 +179,14 @@ hero_kpis:
 
       <div class="form-field">
         <label for="details">
-          Project details<span aria-hidden="true">*</span>
+          Project details<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
         </label>
         <textarea
           id="details"
           name="details"
           rows="6"
           required
+          aria-required="true"
           placeholder="Share details about your property, maintenance needs, remodeling scope, or tile project. Include address/location, property type, timeline, and any specific concerns or requirements."
         ></textarea>
       </div>

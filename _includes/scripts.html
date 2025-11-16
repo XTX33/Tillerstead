@@ -10,12 +10,14 @@
 
 <script
   defer
-  src="{{ '/assets/js/contrast.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+  src="{{ '/assets/js/contrast.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}"
+  crossorigin="anonymous">
 </script>
 
 <script
   defer
-  src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}">
+  src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}"
+  crossorigin="anonymous">
 </script>
 
 {% if page.scripts %}
