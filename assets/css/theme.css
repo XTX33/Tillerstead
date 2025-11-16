@@ -187,6 +187,19 @@ ol {
   color: var(--ts-text-muted);
 }
 
+/* Remove bullets from lists inside cards globally */
+.card ul,
+.ts-card ul,
+.gc-card ul,
+.process-card ul,
+.expect-card ul,
+.docs-card ul,
+.hero-kpis,
+.gc-kpis {
+  list-style: none;
+  padding-left: 0;
+}
+
 li + li {
   margin-top: 0.25rem;
 }

@@ -21,3 +21,6 @@ package-lock.json
 
 # Pattern conversion tool (build artifact)
 convert-pattern.js
+
+# Archive directory
+_archive/
