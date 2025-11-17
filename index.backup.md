@@ -5,12 +5,11 @@ seo_title: Property Maintenance & Remodeling in South Jersey | Tillerstead LLC
 permalink: /
 is_home: true
 body_class: page-home
-description: Tillerstead LLC provides reliable monthly property maintenance, thoughtful remodeling, and tile work built to last for homeowners, landlords, and commercial properties across South Jersey.
-keywords:
-  - Monthly property maintenance South Jersey
-  - NJ HIC remodeling Atlantic County
-  - Property maintenance and remodeling with tile specialty
-  - Waterproof tile assemblies Atlantic County NJ
+description: At Tillerstead LLC we’re proud to be South Jersey’s go‑to team for tile and stone—installations we stand behind for a lifetime. Because great floors start with solid foundations, we also handle flooring, drywall and the other trades that keep a renovation seamless. We listen, we learn, and we deliver lasting results you can trust.
+  - Custom property maintenance plans in South Jersey
+  - NJ HIC-licensed remodeling services, Atlantic County
+  - Property maintenance and remodeling with tile expertise
+  - Waterproof tile installations and assemblies in Atlantic County, NJ
 
 # Enhanced styles for theme token integration
 styles:
@@ -30,11 +29,11 @@ hero_cred_line_2: "Property Maintenance · Remodeling · Tile — NJ Licensed HI
 hero_bg_pattern: "sacred-tile"
 hero_kpis:
   - label: "Service Area"
-    text: "Atlantic County and the South Jersey shore, with regular service into Ocean and Cape May counties."
+    text: "Serving Atlantic County and the South Jersey Shore, with regular service to Ocean and Cape May Counties."
   - label: "Service Focus"
-    text: "Monthly property maintenance, kitchen & bath remodeling, waterproof tile assemblies, and recurring service contracts."
+    text: "Providing monthly property maintenance, kitchen and bathroom remodeling, waterproof tile installations, and recurring service contracts."
   - label: "Our Approach"
-    text: "Clear documentation, reliable scheduling, and work done with integrity and care."
+    text: "We prioritize clear documentation, reliable scheduling, and work performed with integrity and care."
 ---
 
 {%- comment -%}
@@ -95,8 +94,6 @@ not in the front matter.
     "Tile installation and restoration"
   ]
 }
-</script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,18 +101,18 @@ not in the front matter.
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What areas of New Jersey does Tillerstead serve for property maintenance?",
+      "name": "Which areas of New Jersey does Tillerstead provide property maintenance services in?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tillerstead serves homeowners, landlords, and commercial properties throughout Atlantic County and the South Jersey shore, with regular service in Ocean and Cape May counties."
+        "text": "Tillerstead provides property maintenance services to homeowners, landlords, and commercial properties throughout Atlantic County and the South Jersey Shore, with regular service extending to Ocean and Cape May Counties."
       }
     },
     {
       "@type": "Question",
-      "name": "Are you licensed and insured in New Jersey?",
+      "name": "Is Tillerstead licensed and insured in New Jersey?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Tillerstead LLC holds New Jersey Home Improvement Contractor license {{ site.company.hic }} and maintains full insurance coverage."
+        "text": "Yes. Tillerstead LLC holds a valid New Jersey Home Improvement Contractor license HIC #13VH10808800 and maintains full insurance coverage."
       }
     },
     {
@@ -123,20 +120,21 @@ not in the front matter.
       "name": "What services are included in monthly maintenance plans?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Monthly maintenance plans include seasonal inspections, minor repairs, priority scheduling, fixture replacements, grout and caulk refresh, small carpentry, paint touch-ups, and preventive waterproofing checks."
+        "text": "Monthly maintenance plans are custom service plans curated by Tillerstead to best serve South Jersey Home and Business owners."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you handle remodeling projects and tile work?",
+      "name": "Does Tillerstead handle remodeling projects and tile work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Tillerstead provides complete remodeling services including kitchens and bathrooms, plus specialty tile installation with waterproof assemblies for showers, floors, and backsplashes."
+        "text": "Yes. Tillerstead provides complete remodeling services, including kitchens and bathrooms, as well as specialty tile installation with waterproof assemblies for showers, floors, and backsplashes."
       }
     }
   ]
 }
 </script>
+
 
 {%- comment -%}
 Page-specific CSS overrides – moved out of the middle of the HTML.
