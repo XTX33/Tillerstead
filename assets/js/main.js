@@ -111,8 +111,9 @@
   });
 
   /* =========================
-     THEME: system + memory
+     THEME: manual toggle with memory
      - toggles html.classList 'light'
+     - defaults to dark theme (brand design)
   ========================= */
   const THEME_KEY = "ts:theme";
   const themeBtn = $(".theme-toggle");
@@ -133,6 +134,15 @@
     themeBtn?.setAttribute("aria-pressed", String(isLight));
   };
 
+  let saved = null;
+  try {
+    saved = localStorage.getItem(THEME_KEY);
+  } catch (_) {
+    saved = null;
+  }
+
+  // Default to dark theme (brand design) unless user explicitly saved a preference
+  applyTheme(saved || "dark");
   const savedTheme = getStoredTheme();
   applyTheme(savedTheme || DEFAULT_THEME);
 
