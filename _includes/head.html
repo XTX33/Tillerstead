@@ -87,6 +87,8 @@ otherwise fall back to global defaults from _config.yml
 <!-- DNS prefetch for performance -->
 
 <!-- Preload critical CSS for better performance -->
+<link rel="preload" href="{{ '/assets/styles/tokens.css' | relative_url }}" as="style">
+<link rel="stylesheet" href="{{ '/assets/styles/tokens.css' | relative_url }}">
 
 <!-- Fonts with optimized loading -->
 <link rel="preconnect" href="https://fonts.googleapis.com">

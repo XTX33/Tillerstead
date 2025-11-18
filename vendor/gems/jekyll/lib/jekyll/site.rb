@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 require 'yaml'
-<<<<<<< HEAD
-=======
 require 'json'
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
 require 'fileutils'
 require 'time'
 require_relative 'utils'
@@ -33,10 +30,7 @@ module Jekyll
       FileUtils.mkdir_p(@destination)
 
       site_data = Utils.deep_stringify(@config)
-<<<<<<< HEAD
-=======
       site_data['data'] = load_data
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
       site_data['time'] = Time.now
       site_data['baseurl'] = site_data['baseurl'] || ''
       site_data['url'] = site_data['url'] || ''
@@ -71,8 +65,6 @@ module Jekyll
       raise "Invalid YAML in _config.yml: #{e.message}"
     end
 
-<<<<<<< HEAD
-=======
     def load_data
       data_dir = File.join(@source, '_data')
       return {} unless Dir.exist?(data_dir)
@@ -95,7 +87,6 @@ module Jekyll
       Utils.deep_stringify(data)
     end
 
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
     def load_includes
       dir = File.join(@source, '_includes')
       return {} unless Dir.exist?(dir)
@@ -107,8 +98,6 @@ module Jekyll
       end
     end
 
-<<<<<<< HEAD
-=======
     def parse_data_file(path, ext)
       raw = File.read(path)
       case ext
@@ -123,7 +112,6 @@ module Jekyll
       raise "Invalid JSON in #{path}: #{e.message}"
     end
 
->>>>>>> origin/codex/fix-style-issues-and-modernize-html-7k8ueb
     def load_layouts
       dir = File.join(@source, '_layouts')
       return {} unless Dir.exist?(dir)

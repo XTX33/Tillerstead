@@ -1,0 +1,266 @@
+/* ============================================
+   Tillerstead Design Tokens
+   Single source of truth for all visual properties
+   ============================================ */
+
+:root {
+  /* ===========================
+     Color Tokens
+     =========================== */
+  
+  /* Brand Colors - Emerald & Gold/Brass */
+  --color-primary: #1ac87a;           /* Emerald green - vibrant, energetic */
+  --color-primary-strong: #0fa868;    /* Deep emerald - for depth */
+  --color-primary-soft: rgba(26, 200, 122, 0.16);
+  --color-accent: #d8b25a;            /* Gold/brass - warm, premium */
+  --color-accent-soft: rgba(216, 178, 90, 0.22);
+  --color-khaki: #a9967a;             /* Khaki - earthy neutral accent */
+  
+  /* Navy Background Variant (DEFAULT) - Professional and Sophisticated */
+  --color-bg: #0a1628;                /* Deep navy - elegant, trustworthy */
+  --color-surface: #0a1628;
+  --color-surface-elevated: #0f2240;  /* Lighter navy for elevation */
+  --color-surface-muted: #0f2240;
+  --color-surface-highlight: #1a365d; /* Rich navy highlight */
+  
+  /* Alternative: Near-Black Background - Bold and Modern */
+  /* To use near-black variant, uncomment these and comment navy above:
+  --color-bg: #0b0f14;
+  --color-surface: #0b0f14;
+  --color-surface-elevated: #151a21;
+  --color-surface-muted: #151a21;
+  --color-surface-highlight: #1f252e;
+  */
+
+  /* Text Colors - Enhanced for WCAG AAA (7:1) contrast */
+  --color-heading: #ffffff;
+  --color-text: #ffffff;
+  --color-text-muted: #e2e8f0;
+  --color-text-subtle: #cbd5e1;
+
+  /* Border Colors */
+  --color-border: rgba(148, 163, 184, 0.22);
+  --color-border-strong: rgba(148, 163, 184, 0.36);
+  --color-divider: rgba(148, 163, 184, 0.16);
+
+  /* ===========================
+     Gradient Definitions
+     =========================== */
+  
+  /* Back-splash gradient - main brand gradient */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-strong) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, #f0d080 100%);
+  
+  /* Surface gradients - Unified background */
+  --gradient-surface: var(--color-bg);
+  --gradient-surface-alt: var(--color-surface-elevated);
+  --gradient-section: var(--color-bg);
+  
+  /* Radial gradients for effects */
+  --gradient-radial-primary: radial-gradient(circle at top left, rgba(26, 200, 122, 0.06), transparent 45%);
+  --gradient-radial-hero: radial-gradient(circle at 85% 25%, rgba(26, 200, 122, 0.25), transparent 62%);
+
+  /* ===========================
+     Background Pattern Assets
+     =========================== */
+  
+  /* Sacred geometry tile pattern - dark mode optimized */
+  --bg-pattern: url("../assets/patterns/sacred-geometry-tile.webp");
+  --bg-pattern-fallback: url("../assets/patterns/sacred-geometry-tile.png");
+  --bg-pattern-svg: url("../assets/patterns/sacred-geometry-tile.svg");
+  
+  /* Pattern display properties */
+  --bg-pattern-size: 200px;
+  --bg-pattern-opacity: 0.18;
+
+  /* ===========================
+     Typography Tokens
+     =========================== */
+  
+  /* Font Families */
+  --font-sans: "Inter", "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+
+  /* Heading Sizes (responsive with clamp) */
+  --heading-1: clamp(2.75rem, 4vw, 3.5rem);
+  --heading-2: clamp(2.1rem, 3vw, 2.75rem);
+  --heading-3: clamp(1.5rem, 2.5vw, 2rem);
+  --heading-4: clamp(1.2rem, 2vw, 1.45rem);
+
+  /* ===========================
+     Spacing Scale
+     =========================== */
+  
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 5rem;
+
+  /* ===========================
+     Border Radius
+     =========================== */
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+
+  /* ===========================
+     Shadows (Enhanced for Boss Theme)
+     =========================== */
+  
+  --shadow-soft: 0 24px 40px rgba(2, 6, 23, 0.45);
+  --shadow-lift: 0 36px 72px rgba(2, 6, 23, 0.6);
+  --shadow-sharp: 0 20px 38px rgba(15, 23, 42, 0.55);
+  --shadow-button: 0 16px 36px rgba(26, 200, 122, 0.35);
+  --shadow-button-hover: 0 24px 48px rgba(26, 200, 122, 0.4);
+  --shadow-glow: 0 0 20px rgba(26, 200, 122, 0.4), 0 0 40px rgba(26, 200, 122, 0.2);
+  --shadow-glow-accent: 0 0 20px rgba(216, 178, 90, 0.4), 0 0 40px rgba(216, 178, 90, 0.2);
+
+  /* ===========================
+     Transitions
+     =========================== */
+  
+  --transition-fast: 150ms ease;
+  --transition-med: 220ms ease;
+  --transition-slow: 350ms ease;
+
+  /* ===========================
+     Layout
+     =========================== */
+  
+  --shell-width: 1140px;
+  --focus-ring: 0 0 0 3px rgba(34, 197, 94, 0.45);
+}
+
+/* ===========================
+   Light Mode Overrides
+   =========================== */
+
+html.light {
+  color-scheme: light;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f1f5f9;
+  --color-surface-muted: #f1f5f9;
+  --color-surface-highlight: #e2e8f0;
+  --color-heading: #0b1220;
+  --color-text: #0b1220;
+  --color-text-muted: #1f2937;
+  --color-text-subtle: #475569;
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-border-strong: rgba(15, 23, 42, 0.2);
+  --color-divider: rgba(15, 23, 42, 0.12);
+  --shadow-soft: 0 24px 40px rgba(15, 23, 42, 0.12);
+  --shadow-lift: 0 32px 64px rgba(15, 23, 42, 0.16);
+  --shadow-sharp: 0 16px 32px rgba(15, 23, 42, 0.18);
+  --focus-ring: 0 0 0 3px rgba(26, 200, 122, 0.35);
+  
+  /* Background pattern - light mode variant */
+  --bg-pattern-opacity: 0.08;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+/* Typography Utilities */
+.heading-1 { font-size: var(--heading-1); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
+.heading-2 { font-size: var(--heading-2); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
+.heading-3 { font-size: var(--heading-3); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
+.heading-4 { font-size: var(--heading-4); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
+
+.text-primary { color: var(--color-primary) !important; }
+.text-accent { color: var(--color-accent) !important; }
+.text-muted { color: var(--color-text-muted) !important; }
+.text-subtle { color: var(--color-text-subtle) !important; }
+
+/* Background Utilities */
+.bg-primary { background: var(--color-primary) !important; }
+.bg-accent { background: var(--color-accent) !important; }
+.bg-surface { background: var(--color-surface) !important; }
+.bg-surface-elevated { background: var(--color-surface-elevated) !important; }
+
+/* Gradient Utilities */
+.bg-gradient { background: var(--gradient-primary) !important; }
+.bg-gradient-accent { background: var(--gradient-accent) !important; }
+.bg-gradient-surface { background: var(--gradient-surface) !important; }
+.bg-gradient-radial { background: var(--gradient-radial-primary) !important; }
+
+/* Spacing Utilities */
+.mt-1 { margin-top: var(--space-1) !important; }
+.mt-2 { margin-top: var(--space-2) !important; }
+.mt-3 { margin-top: var(--space-3) !important; }
+.mt-4 { margin-top: var(--space-4) !important; }
+.mt-5 { margin-top: var(--space-5) !important; }
+.mt-6 { margin-top: var(--space-6) !important; }
+
+.mb-1 { margin-bottom: var(--space-1) !important; }
+.mb-2 { margin-bottom: var(--space-2) !important; }
+.mb-3 { margin-bottom: var(--space-3) !important; }
+.mb-4 { margin-bottom: var(--space-4) !important; }
+.mb-5 { margin-bottom: var(--space-5) !important; }
+.mb-6 { margin-bottom: var(--space-6) !important; }
+
+.p-1 { padding: var(--space-1) !important; }
+.p-2 { padding: var(--space-2) !important; }
+.p-3 { padding: var(--space-3) !important; }
+.p-4 { padding: var(--space-4) !important; }
+.p-5 { padding: var(--space-5) !important; }
+.p-6 { padding: var(--space-6) !important; }
+
+/* Modern Logical Property Utilities (for better internationalization) */
+.mbs-1 { margin-block-start: var(--space-1) !important; }
+.mbs-2 { margin-block-start: var(--space-2) !important; }
+.mbs-3 { margin-block-start: var(--space-3) !important; }
+.mbs-4 { margin-block-start: var(--space-4) !important; }
+
+.mbe-1 { margin-block-end: var(--space-1) !important; }
+.mbe-2 { margin-block-end: var(--space-2) !important; }
+.mbe-3 { margin-block-end: var(--space-3) !important; }
+.mbe-4 { margin-block-end: var(--space-4) !important; }
+
+.p-inline-1 { padding-inline: var(--space-1) !important; }
+.p-inline-2 { padding-inline: var(--space-2) !important; }
+.p-inline-3 { padding-inline: var(--space-3) !important; }
+.p-inline-4 { padding-inline: var(--space-4) !important; }
+
+.p-block-1 { padding-block: var(--space-1) !important; }
+.p-block-2 { padding-block: var(--space-2) !important; }
+.p-block-3 { padding-block: var(--space-3) !important; }
+.p-block-4 { padding-block: var(--space-4) !important; }
+
+/* Border Utilities */
+.border { border: 1px solid var(--color-border) !important; }
+.border-strong { border: 1px solid var(--color-border-strong) !important; }
+
+.rounded-sm { border-radius: var(--radius-sm) !important; }
+.rounded-md { border-radius: var(--radius-md) !important; }
+.rounded-lg { border-radius: var(--radius-lg) !important; }
+.rounded-xl { border-radius: var(--radius-xl) !important; }
+.rounded-pill { border-radius: var(--radius-pill) !important; }
+
+/* Shadow Utilities */
+.shadow-soft { box-shadow: var(--shadow-soft) !important; }
+.shadow-lift { box-shadow: var(--shadow-lift) !important; }
+.shadow-sharp { box-shadow: var(--shadow-sharp) !important; }
+.shadow-glow { box-shadow: var(--shadow-glow) !important; }
+.shadow-glow-accent { box-shadow: var(--shadow-glow-accent) !important; }
