@@ -117,6 +117,16 @@
   ========================= */
   const THEME_KEY = "ts:theme";
   const themeBtn = $(".theme-toggle");
+  const DEFAULT_THEME = "dark";
+
+  const getStoredTheme = () => {
+    try {
+      const value = localStorage.getItem(THEME_KEY);
+      return value === "light" || value === "dark" ? value : null;
+    } catch (_) {
+      return null;
+    }
+  };
 
   const applyTheme = (theme) => {
     const isLight = theme === "light";
@@ -133,6 +143,8 @@
 
   // Default to dark theme (brand design) unless user explicitly saved a preference
   applyTheme(saved || "dark");
+  const savedTheme = getStoredTheme();
+  applyTheme(savedTheme || DEFAULT_THEME);
 
   themeBtn?.addEventListener("click", () => {
     const isLight = document.documentElement.classList.toggle("light");
