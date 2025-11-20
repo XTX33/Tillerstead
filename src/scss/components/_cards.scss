@@ -414,13 +414,8 @@
 
 .about-grid {
   display: grid;
-  gap: clamp(1.5rem, 3vw, 2rem);
-}
-
-@media (min-width: 880px) {
-  .about-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .about-card,
@@ -430,5 +425,9 @@
 }
 
 .about-cta {
-  margin-top: var(--space-6);
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+
+  @media (min-width: 720px) {
+    margin-top: 0;
+  }
 }
