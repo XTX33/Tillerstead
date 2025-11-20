@@ -27,10 +27,7 @@
   src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
   crossorigin="anonymous"></script>
 
-<!-- Optional loading screen (non-blocking) -->
-<script defer
-  src="{{ '/assets/js/loading-screen.js' | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
-  crossorigin="anonymous"></script>
+{%- comment -%}Loading screen script removed (deprecated).{%- endcomment -%}
 
 <!-- Reduced motion detection -->
 <script>

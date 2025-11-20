@@ -12,7 +12,6 @@ assets/css/
 ├── layout.css            # Page structure (630 lines)
 ├── components.css        # Reusable UI components (2,553 lines)
 ├── home.css              # Homepage-specific styles (520 lines)
-├── construction-banner.css  # Special: banner component (78 lines)
 └── pattern-showcase.css     # Special: pattern utilities (174 lines)
 
 src/styles/
@@ -26,7 +25,7 @@ src/styles/
 3. **layout.css** - Structure (containers, header, footer, navigation)
 4. **components.css** - Reusable UI (buttons, cards, forms, hero)
 5. **Page-specific CSS** - Only for that page (e.g., home.css)
-6. **Special components** - As needed (banner, patterns)
+6. **Special components** - As needed (patterns)
 
 ## File Responsibilities
 
@@ -142,10 +141,8 @@ Styles ONLY used on the homepage:
 
 ### Special Components
 
-#### construction-banner.css
-**Location:** `assets/css/construction-banner.css`
-
-Styles for the construction/update banner displayed at the top of pages.
+#### (Deprecated) construction-banner.css
+Removed November 2025. Banner and loading screen were deprecated to simplify above-the-fold rendering and reduce unused CSS. Historical references retained here for traceability.
 
 #### pattern-showcase.css
 **Location:** `assets/css/pattern-showcase.css`
