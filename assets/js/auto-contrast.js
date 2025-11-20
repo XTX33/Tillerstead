@@ -29,12 +29,12 @@
   'use strict';
 
   const BRAND = {
-    primary: getCSSVar('--color-primary', '#1ac87a'),
-    primaryStrong: getCSSVar('--color-primary-strong', '#0e8e52'),
-    accent: getCSSVar('--color-accent', '#d8b25a'),
-    surface: getCSSVar('--color-surface', '#0a1628'),
-    surfaceElevated: getCSSVar('--color-surface-elevated', '#14263d'),
-    heading: getCSSVar('--color-heading', '#ffffff'),
+    primary: getCSSVar('--color-primary', '#00a86b'),
+    primaryStrong: getCSSVar('--color-primary-strong', '#007a52'),
+    accent: getCSSVar('--color-accent', '#8b6f47'),
+    surface: getCSSVar('--color-surface', '#fffaf5'),
+    surfaceElevated: getCSSVar('--color-surface-elevated', '#ffffff'),
+    heading: getCSSVar('--color-heading', '#1a1a1a'),
   };
 
   function getCSSVar(name, fallback) {
