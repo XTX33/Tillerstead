@@ -63,7 +63,7 @@ bundle exec jekyll build
 ## PWA/Manifest
 - [ ] `manifest.webmanifest` loads; brand colors (emerald/parchment)
 - [ ] Shortcuts open `/contact/` and `/portfolio/`
-- [ ] Icons resolve (temp use of `assets/img/tillerstead-logo.png`); optional: add true 192/256/384/512 PNGs
+- [ ] Icons resolve (current gold grout SVGs live under `assets/img/logo/`); optional: add true 192/256/384/512 PNGs
 
 ## Content & Copy
 - [ ] Services language is specific and NJ-focused

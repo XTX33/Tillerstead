@@ -25,13 +25,15 @@ Usage: {% include services-section.html %}
               <div class="service-card__icon" aria-hidden="true">
                 {% case service_icon %}
                   {% when 'tile' %}
-                    <svg viewBox="0 0 36 36" role="presentation" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3.5" y="3.5" width="12" height="12" rx="2"/>
-                      <rect x="20.5" y="3.5" width="12" height="12" rx="2"/>
-                      <rect x="3.5" y="20.5" width="12" height="12" rx="2"/>
-                      <rect x="20.5" y="20.5" width="12" height="12" rx="2"/>
-                      <path class="accent" d="M6 23c3-2 6-4 9-6 2-1 4-1 6 1"/>
-                      <path class="accent" d="M6 30c2-1 4-3 6-4 3-1 5 0 7 2l3 3"/>
+                    <svg viewBox="0 0 40 40" role="presentation" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="4" width="12" height="12" rx="2"/>
+                      <rect x="20" y="4" width="12" height="12" rx="2"/>
+                      <rect x="4" y="20" width="12" height="12" rx="2"/>
+                      <rect x="20" y="20" width="12" height="12" rx="2"/>
+                      <path d="M24 13l9 9-6 6-9-9z"/>
+                      <path class="accent" d="M30 27l4 4"/>
+                      <path class="accent" d="M25 22l3 3"/>
+                      <path class="accent" d="M6 34h11M22 34h11"/>
                     </svg>
                   {% when 'remodeling' %}
                     <svg viewBox="0 0 34 32" role="presentation" stroke-linecap="round" stroke-linejoin="round">
