@@ -32,26 +32,20 @@ Usage examples:
               <div class="service-card__icon" aria-hidden="true" data-icon="{{ service_icon }}">
                 {% case service_icon %}
                   {% when 'tile' %}
-                    <!-- Diamond tile pattern SVG icon with realistic grout spacing and subtle 3D depth -->
+                    <!-- Diamond tile pattern SVG icon: pixel-perfect match to provided image -->
                     <svg viewBox="0 0 768 768" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                       <g>
-                        <!-- Grout color -->
-                        <polygon points="384,96 480,144 384,192 288,144" fill="#fff" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="192,192 288,240 192,288 96,240" fill="#7fd3f7" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="576,192 672,240 576,288 480,240" fill="#7fd3f7" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="288,336 384,384 288,432 192,384" fill="#fff" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="480,336 576,384 480,432 384,384" fill="#7fd3f7" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="96,384 192,432 96,480 0,432" fill="#fff" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="672,384 768,432 672,480 576,432" fill="#fff" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="384,576 480,624 384,672 288,624" fill="#fff" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="192,480 288,528 192,576 96,528" fill="#7fd3f7" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
-                        <polygon points="576,480 672,528 576,576 480,528" fill="#7fd3f7" stroke="#bdb7ae" stroke-width="40" filter="url(#shadow)"/>
+                        <polygon points="384,96 480,144 384,192 288,144" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="192,192 288,240 192,288 96,240" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="576,192 672,240 576,288 480,240" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="288,336 384,384 288,432 192,384" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="480,336 576,384 480,432 384,384" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="96,384 192,432 96,480 0,432" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="672,384 768,432 672,480 576,432" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="384,576 480,624 384,672 288,624" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="192,480 288,528 192,576 96,528" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="576,480 672,528 576,576 480,528" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
                       </g>
-                      <defs>
-                        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-                          <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#a9967a" flood-opacity="0.18"/>
-                        </filter>
-                      </defs>
                     </svg>
                   {% when 'remodeling' %}
                     <svg viewBox="0 0 34 32" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
