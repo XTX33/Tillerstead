@@ -360,9 +360,9 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(5, 13, 10, 0.15) 20%, rgba(5, 13, 10, 0.82) 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
-  opacity: 1;
+    linear-gradient(180deg, rgba(5, 13, 10, 0.06) 10%, rgba(5, 13, 10, 0.72) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
+  opacity: 0.95;
   z-index: 1;
   transition: opacity var(--transition-med);
 }
@@ -373,25 +373,28 @@
   right: 1rem;
   bottom: 1rem;
   z-index: 2;
-  color: #fefaf1;
+  color: #fffdf5;
   font-size: 0.95rem;
   line-height: 1.4;
   padding: 0.75rem 0.9rem;
   border-radius: var(--radius-md);
-  background: rgba(9, 24, 17, 0.72);
-  box-shadow: 0 12px 28px rgba(3, 8, 6, 0.45);
-  backdrop-filter: blur(6px);
+  background: rgba(4, 18, 12, 0.58);
+  box-shadow: 0 16px 32px rgba(3, 8, 6, 0.55);
+  backdrop-filter: blur(10px);
+  text-shadow: 0 2px 10px rgba(2, 4, 3, 0.75);
 }
 
 .gallery-strip__item figcaption strong {
   display: block;
   font-size: 1rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .gallery-strip__item figcaption span {
   font-weight: 500;
   font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .gallery-strip__item:hover img {
