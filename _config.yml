@@ -5,7 +5,7 @@
 # Site identity
 title: Tillerstead LLC
 tagline: Property Maintenance, Remodeling & Tile in South Jersey
-description: Tillerstead LLC provides monthly property maintenance, remodeling, and waterproof tile installations for South Jersey homeowners, landlords, and small commercial spaces. NJ HIC #13VH10808800.
+description: Tillerstead LLC provides monthly property maintenance, remodeling, and waterproof tile installations for South Jersey homeowners, landlords, and small commercial spaces. NJ HIC #13VH10[...]
 url: https://tillerstead.com
 baseurl: ""                 # keep empty for apex/root
 timezone: America/New_York
@@ -57,7 +57,7 @@ logo: /assets/img/logo/tillerstead-logo-header.svg
 default_og_image: /assets/img/marble-bath.jpg
 
 # Cache-busting helper
-assets_version: "2025-11-20.1"
+assets_version: "2025-11-23.1"
 
 # Publish / build controls
 exclude:
