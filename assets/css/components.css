@@ -1,3 +1,11 @@
+/* Standardized button container for homepage sections */
+.section-action, .hero__actions, .hero__actions--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 /* Gallery strip project title color */
 .gallery-title {
   color: #222;

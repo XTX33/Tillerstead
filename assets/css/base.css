@@ -381,7 +381,7 @@ select:focus-visible {
     display: none !important;
   }
 }
-
+  padding: 2rem 2.5rem;
 /* ============================================
    High Contrast Mode Support
    ============================================ */
