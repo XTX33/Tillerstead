@@ -210,7 +210,7 @@ html.light {
 .heading-4 { font-size: var(--heading-4); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
 
 .text-primary { color: var(--color-primary) !important; }
-.text-accent { color: var(--color-accent) !important; }
+.text-accent { color: var(--color-heading) !important; }
 .text-muted { color: var(--color-text-muted) !important; }
 .text-subtle { color: var(--color-text-subtle) !important; }
 

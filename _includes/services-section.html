@@ -32,12 +32,13 @@ Usage examples:
               <div class="service-card__icon" aria-hidden="true" data-icon="{{ service_icon }}">
                 {% case service_icon %}
                   {% when 'tile' %}
-                    <!-- Proper grid tile pattern SVG icon: classic install -->
-                    <svg viewBox="0 0 40 40" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                      <rect x="3" y="3" width="12" height="12" rx="2" fill="#fff" stroke="#C9A23F" stroke-width="2"/>
-                      <rect x="3" y="19" width="12" height="12" rx="2" fill="#fff" stroke="#C9A23F" stroke-width="2"/>
-                      <rect x="19" y="3" width="12" height="12" rx="2" fill="#fff" stroke="#C9A23F" stroke-width="2"/>
-                      <rect x="19" y="19" width="12" height="12" rx="2" fill="#fff" stroke="#C9A23F" stroke-width="2"/>
+                    <!-- Tile grid icon with brand strokes -->
+                    <svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <rect x="5" y="5" width="10" height="10" rx="2" />
+                      <rect x="25" y="5" width="10" height="10" rx="2" />
+                      <rect x="5" y="25" width="10" height="10" rx="2" />
+                      <rect x="25" y="25" width="10" height="10" rx="2" />
+                      <path class="accent" d="M15 10h10M10 15v10M25 15v10M15 25h10" />
                     </svg>
                   {% when 'remodeling' %}
                     <svg viewBox="0 0 34 32" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">

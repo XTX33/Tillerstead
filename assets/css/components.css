@@ -246,7 +246,7 @@ label {
 
 /* Text colors */
 .text-primary { color: var(--color-primary); }
-.text-accent { color: var(--color-accent); }
+.text-accent { color: var(--color-heading); }
 .text-heading { color: var(--color-heading); }
 .text-muted { color: var(--color-text-muted); }
 
