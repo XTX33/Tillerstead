@@ -47,8 +47,22 @@
   {% else %}
     {% assign final_href = '' %}
   {% endif %}
-  <a class="{{ classes }}" href="{{ final_href }}"{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}{% if should_target_blank %} target="_blank" rel="noopener"{% endif %}>
-    <span class="btn-label">{{ display }}</span>
-  </a>
+  {% if aria_label and should_target_blank %}
+    <a class="{{ classes }}" href="{{ final_href }}" aria-label="{{ aria_label }}" target="_blank" rel="noopener">
+      <span class="btn-label">{{ display }}</span>
+    </a>
+  {% elsif aria_label %}
+    <a class="{{ classes }}" href="{{ final_href }}" aria-label="{{ aria_label }}">
+      <span class="btn-label">{{ display }}</span>
+    </a>
+  {% elsif should_target_blank %}
+    <a class="{{ classes }}" href="{{ final_href }}" target="_blank" rel="noopener">
+      <span class="btn-label">{{ display }}</span>
+    </a>
+  {% else %}
+    <a class="{{ classes }}" href="{{ final_href }}">
+      <span class="btn-label">{{ display }}</span>
+    </a>
+  {% endif %}
 {% endif %}
 {% assign nav_action = nil %}

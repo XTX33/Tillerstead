@@ -3,358 +3,41 @@ layout: default
 title: Tillerstead LLC | Tile Installation, Remodeling & Property Care in South Jersey
 description: Licensed NJ home improvement contractor specializing in waterproof tile assemblies, organized remodels, and monthly property maintenance for Atlantic, Ocean & Cape May Counties.
 body_class: page-home
+is_home: true
+hide_hero: true
+hero_eyebrow: Licensed & Documented
+hero_title: Waterproof tile, remodeling & property care in South Jersey
+hero_summary: >
+  Owner-operated tile installation, interior remodeling, and property maintenance that pairs coastal-grade materials with organized scopes, written change orders, and fast response for Atlantic, Ocean, and Cape May Counties.
+---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tillerstead LLC | Tile, Bath & Remodeling</title>
-    <meta name="description" content="Tillerstead LLC is a New Jersey-licensed home improvement business specializing in tile, bath, and remodeling services.">
-    <meta property="og:title" content="Tillerstead LLC | Tile, Bath & Remodeling">
-    <meta property="og:description" content="Tillerstead LLC is a New Jersey-licensed home improvement business specializing in tile, bath, and remodeling services.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tillerstead.com/">
-    <meta property="og:image" content="/assets/img/og-tillerstead.jpg">
-    <link rel="canonical" href="https://tillerstead.com/">
-    <link rel="stylesheet" href="/assets/css/theme.css">
-    <link rel="stylesheet" href="/assets/css/_hero-patterns.css">
-    <link rel="icon" href="/assets/img/favicon.ico">
-    <link rel="manifest" href="/manifest.webmanifest">
-    {% include head.html %}
-  </head>
-  <body>
-    {% include header.html %}
-    {% include unified-hero.html %}
-    <main id="main-content" tabindex="-1">
-      <!-- Service Summary Grid -->
-      <section class="service-grid bg-surface-elevated p-6 rounded-lg shadow-lift" aria-label="Our Services">
-        <h2 class="heading-2 text-primary mb-4">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div class="service-card">
-            <h3 class="heading-3">Tile Installation</h3>
-            <p>Expert tile work for kitchens, baths, and floors. Precision, durability, and style.</p>
-          </div>
-          <div class="service-card">
-            <h3 class="heading-3">Bath Remodeling</h3>
-            <p>Transform your bathroom with custom designs, quality fixtures, and seamless finishes.</p>
-          </div>
-          <div class="service-card">
-            <h3 class="heading-3">Home Renovation</h3>
-            <p>Comprehensive remodeling for any space. Licensed, insured, and client-focused.</p>
-          </div>
-        </div>
-      </section>
+{% include ts-hero.html
+  eyebrow=page.hero_eyebrow
+  title=page.hero_title
+  summary=page.hero_summary %}
 
-      <!-- Portfolio Highlights -->
-      <section class="portfolio-highlights mt-8" aria-label="Featured Projects">
-        <h2 class="heading-2 text-primary mb-4">Featured Projects</h2>
-        {% include portfolio-highlights.html %}
-      </section>
+{% include ts-services.html
+  summary="Tile assemblies, organized remodeling, and proactive property maintenance plans built for shore climates and managed directly by the owner." %}
 
-      <!-- Testimonials -->
-      <section class="reviews-highlights mt-8 bg-gradient p-6 rounded-lg" aria-label="Client Testimonials">
-        <h2 class="heading-2 text-primary mb-4">What Clients Say</h2>
-        {% include reviews-highlights.html %}
-      </section>
+{% include ts-plans.html
+  summary="Choose a recurring maintenance rhythm with photo documentation, moisture checks, and minor repairs handled before they expand into costly issues." %}
 
-      <!-- Contact CTA -->
-      <section class="cta-estimate mt-8 text-center p-6 bg-surface rounded-lg shadow-soft" aria-label="Get an Estimate">
-        <h2 class="heading-2 text-accent mb-2">Ready to Start Your Project?</h2>
-        <p class="mb-4">Contact Tillerstead for a free, no-obligation estimate. We respond within 24 hours.</p>
-        {% include cta-estimate.html %}
-      </section>
-    </main>
-    {% include footer.html %}
-    <script src="/assets/js/agent.js" type="module" defer></script>
-    {% include scripts.html %}
-  </body>
-</html>
+{% include ts-process.html %}
 
-{% assign gallery_strip = site.data.portfolio_highlights.highlights | default: site.data.portfolio_highlights %}
-{% if gallery_strip and gallery_strip.size > 0 %}
-  <section class="gallery-strip" aria-labelledby="gallery-strip-title" data-animate="reveal">
-    <div class="container">
-      <div class="gallery-strip__inner">
-        <div class="gallery-strip__copy">
-          <p class="eyebrow">Recent projects</p>
-          <h2 id="gallery-strip-title">Quality tile work & remodels across South Jersey</h2>
-          <p>Custom tile installations, waterproof showers, and precision remodeling for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties.</p>
-          <div class="hero__actions hero__actions--center">
-            <a class="btn btn--primary" href="{{ '/portfolio/' | relative_url }}">View full portfolio</a>
-            <a class="btn btn--ghost" href="{{ '/contact/' | relative_url }}">Request a quote</a>
-          </div>
-        </div>
-        <div class="gallery-strip__grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; border-radius: 1.25rem; background: linear-gradient(135deg, #f8f6ee 0%, #ece7d9 100%); box-shadow: var(--shadow-soft);">
-          {% assign preview_items = gallery_strip | slice: 0, 4 %}
-          {% for item in preview_items %}
-            <figure class="gallery-strip__item" style="border-radius: 1rem; box-shadow: var(--shadow-soft); background: linear-gradient(135deg, #f8f6ee 0%, #ece7d9 100%);">
-              <img src="{{ item.file | relative_url }}"
-                   alt="{{ item.alt | default: item.title | escape }} in {{ item.location | default: 'South Jersey' }}"
-                   loading="lazy"
-                   decoding="async"
-                   width="400"
-                   height="300"
-                   style="border-radius: 0.75rem; box-shadow: var(--shadow-sharp);">
-              <figcaption>
-                {% if item.title %}<strong class="text-primary">{{ item.title }}</strong>{% endif %}
-                {% if item.location %}<span class="text-accent">&bull; {{ item.location }}</span>{% endif %}
-              </figcaption>
-            </figure>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
-<section class="ts-gallery" aria-labelledby="ts-gallery-title">
-  <div class="container">
-    <header class="ts-gallery__header">
-      <span class="eyebrow">Recent Projects</span>
-      <h2 id="ts-gallery-title" class="heading-2">Waterproof Tile &amp; Remodels for Shore Properties</h2>
-      <p>Custom tile installations, waterproof showers, and precision remodeling for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties.</p>
-      <nav class="ts-gallery__actions" aria-label="Gallery actions">
-        <a class="btn btn--primary" href="/portfolio/">View Full Portfolio</a>
-        <a class="btn btn--ghost" href="/contact/">Request a Quote</a>
-      </nav>
-    </header>
-    <ul class="ts-gallery__grid gallery" role="list">
-      {% assign preview_items = gallery_strip | slice: 0, 4 %}
-      {% for item in preview_items %}
-      <li class="ts-gallery__card">
-        <figure class="ts-gallery__figure">
-          <img src="{{ item.file | relative_url }}" alt="{{ item.alt | default: item.title | escape }} in {{ item.location | default: 'South Jersey' }}" loading="lazy" decoding="async" width="400" height="300" class="ts-gallery__img" style="object-fit:cover;aspect-ratio:4/3;">
-          <figcaption class="ts-gallery__caption">
-            {% if item.title %}<strong class="ts-gallery__title">{{ item.title }}</strong>{% endif %}
-            {% if item.location %}<span class="ts-gallery__location">&bull; {{ item.location }}</span>{% endif %}
-          </figcaption>
-          <a href="/portfolio/" class="ts-gallery__overlay" aria-label="View details"></a>
-        </figure>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</section>
-{% endif %}
+{% include ts-deliver.html %}
 
-<!-- Services overview (standardized include; customized params for homepage SEO & reduced repetition) -->
-<section class="ts-services" aria-labelledby="ts-services-title">
-  <div class="container">
-    <header class="ts-services__header">
-      <span class="eyebrow">Core Capabilities</span>
-      <h2 id="ts-services-title" class="heading-2">Tile, Remodeling &amp; Property Maintenance Expertise</h2>
-      <p>Precision tile installations, documented waterproofing, organized remodeling, and proactive property maintenance programs built for South Jersey coastal conditions. All work is owner-operated, fully documented, and designed for long-term durability.</p>
-    </header>
-    <ul class="ts-services__grid">
-      <li class="ts-service-card">
-        <h3>Tile Installation</h3>
-        <p>Showers, baths, heated floors, and large-format tile—built on certified waterproof systems.</p>
-        <a href="/services/#tile" class="btn btn--ghost">Learn More</a>
-      </li>
-      <li class="ts-service-card">
-        <h3>Remodeling</h3>
-        <p>Full bath and kitchen remodels, finish carpentry, and owner-led project management.</p>
-        <a href="/services/#remodeling" class="btn btn--ghost">Learn More</a>
-      </li>
-      <li class="ts-service-card">
-        <h3>Property Maintenance</h3>
-        <p>Monthly and seasonal plans for shore homes—photo documentation, repairs, and fast response.</p>
-        <a href="/services/#maintenance" class="btn btn--ghost">Learn More</a>
-      </li>
-    </ul>
-    <div class="ts-services__actions">
-      <a class="btn btn--primary" href="/services/">Browse All Services</a>
-      <a class="btn btn--ghost" href="/portfolio/">See Recent Projects</a>
-    </div>
-  </div>
-</section>
+{% include ts-assurance.html %}
 
+{% include portfolio-highlights.html
+  eyebrow="Recent projects"
+  title="Waterproof tile & remodels across South Jersey"
+  summary="Documented scopes, moisture management, and detailed finishes for shore homes, rentals, and small commercial spaces." %}
 
-<section class="ts-deliver" aria-labelledby="ts-deliver-title">
-  <div class="container ts-deliver__grid">
-    <div class="ts-deliver__intro">
-      <span class="eyebrow">What We Deliver</span>
-      <h2 id="ts-deliver-title" class="heading-2">Craftsmanship Built for Shore Life</h2>
-      <ul class="ts-deliver__list">
-        <li><strong>Owner-led scheduling</strong> and on-site problem solving</li>
-        <li><strong>Documented scopes</strong>, change orders, and punch lists</li>
-        <li><strong>Coastal-grade materials</strong> and waterproof builds</li>
-      </ul>
-    </div>
-    <div class="ts-deliver__card" aria-label="Specialized tile and stone service">
-      <span class="ts-deliver__eyebrow">Specialized Service</span>
-      <h3>Tile &amp; Stone</h3>
-      <ul class="ts-deliver__features">
-        <li>Showers &amp; bath rebuilds</li>
-        <li>Heated floors and prep work</li>
-        <li>Large-format tile installations</li>
-        <li>Waterproofing membranes</li>
-      </ul>
-      <div class="ts-deliver__meta">
-        <span class="ts-deliver__chip">Licensed &amp; Insured</span>
-        <span class="ts-deliver__chip ts-deliver__chip--outline">Serving Atlantic, Ocean &amp; Cape May</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="ts-plans" aria-labelledby="ts-plans-title">
-  <div class="container">
-    <header class="ts-plans__header">
-      <span class="eyebrow">Property Care Programs</span>
-      <h2 id="ts-plans-title" class="heading-2">Monthly Maintenance Plans for Shore Properties</h2>
-      <p>Choose a cadence that matches your portfolio. Each visit delivers photo documentation, a detailed checklist, and proactive recommendations before small issues become costly repairs. Owner-operated service means direct accountability and fast response.</p>
-    </header>
-    <div class="ts-plans__grid">
-      <article class="ts-plan-card">
-        <h3>Core Checklist</h3>
-        <ul>
-          <li>Moisture, leak, and HVAC inspections</li>
-          <li>Minor repairs completed on the spot</li>
-          <li>On-call support between visits</li>
-        </ul>
-      </article>
-      <article class="ts-plan-card">
-        <h3>Concierge Add-ons</h3>
-        <ul>
-          <li>Vendor coordination &amp; key holder services</li>
-          <li>Storm prep and post-event inspections</li>
-          <li>Supply restocking &amp; turnover prep</li>
-        </ul>
-      </article>
-      <article class="ts-plan-card ts-plan-card--accent">
-        <h3>Transparent Reporting</h3>
-        <p>Each maintenance cycle ships with a written report, timestamped photos, and next-step recommendations so you can make decisions quickly—even when you are out of state. All change orders are delivered in writing for full transparency.</p>
-        <dl class="ts-plan-stats">
-          <div>
-            <dt>&lt;24 hrs</dt>
-            <dd>response time for maintenance clients</dd>
-          </div>
-          <div>
-            <dt>100%</dt>
-            <dd>of change orders delivered in writing</dd>
-          </div>
-        </dl>
-      </article>
-    </div>
-    <div class="ts-plans__actions">
-      <a class="btn btn--primary" href="/services/#maintenance">See Maintenance Coverage</a>
-      <a class="btn btn--ghost" href="/contact/">Request a Plan Walkthrough</a>
-    </div>
-  </div>
-</section>
-
-<section class="ts-process" aria-labelledby="ts-process-title">
-  <div class="container">
-    <header class="ts-process__header">
-      <span class="eyebrow">How We Work</span>
-      <h2 id="ts-process-title" class="heading-2">Documented Craftsmanship from Walk-through to Closeout</h2>
-    </header>
-    <ol class="ts-process__steps">
-      <li class="ts-process__step">
-        <h3>Walk-through &amp; Assessment</h3>
-        <p>Start with a free on-site consultation to review your goals, budget, and property conditions. I identify any underlying issues so your project is built on solid information from day one.</p>
-      </li>
-      <li class="ts-process__step">
-        <h3>Written Scope &amp; Approval</h3>
-        <p>Receive a detailed written scope covering materials, timelines, waterproofing assemblies, and clear change-order terms. You always know what’s included, when it’s coming, and why.</p>
-      </li>
-      <li class="ts-process__step">
-        <h3>Execution &amp; Closeout</h3>
-        <p>Work proceeds with daily photo updates and on-site cleanliness. At completion, you get a final checklist and can opt into a maintenance plan to keep everything performing and looking its best.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="ts-assurance" aria-labelledby="ts-assurance-title">
-  <div class="container">
-    <span class="eyebrow">Owner-Operated Accountability</span>
-    <h2 id="ts-assurance-title" class="heading-2">Direct Communication with the Craftsman</h2>
-    <ul class="ts-assurance__list">
-      <li><strong>Documented scopes</strong> with waterproofing specs &amp; change-order terms</li>
-      <li><strong>Daily progress photos</strong> &amp; maintained job-site cleanliness</li>
-      <li><strong>Licensed NJ HIC #13VH10808800</strong>, fully insured</li>
-    </ul>
-    <div class="ts-assurance__actions">
-      <a class="btn btn--primary" href="/reviews/">Read Client Reviews</a>
-      <a class="btn btn--ghost" href="/portfolio/">View Portfolio Highlights</a>
-    </div>
-  </div>
-</section>
-
-{% include portfolio-highlights.html %}
-<!-- Inline portfolio highlights with four cards for alignment -->
-<section class="section" aria-labelledby="gallery-title">
-  <div class="container">
-    <div class="section-header">
-      <p class="eyebrow">Recent work</p>
-      <h2 id="gallery-title">Portfolio highlights</h2>
-      <p>From waterproof tile assemblies to full remodeling projects—each documented with photos and detailed scopes.</p>
-    </div>
-    {% assign items = site.data.portfolio_highlights.highlights | default: site.data.portfolio_highlights %}
-    {% if items and items.size > 0 %}
-      {% assign preview_items = items | slice: 0, 4 %}
-      <ul class="cards cards--4col">
-        {% for item in preview_items %}
-          <li class="card card--portfolio">
-            <div class="card-media" style="--ar: {{ item.ar | default: '4/3' }}">
-              <img src="{{ item.file | relative_url }}"
-                   alt="{{ item.alt | escape }}"
-                   loading="lazy"
-                   decoding="async">
-            </div>
-            <div class="card-content">
-              {% if item.category %}<span class="card-category">{{ item.category }}</span>{% endif %}
-              {% if item.title %}<h3 class="card-title">{{ item.title }}</h3>{% endif %}
-              {% if item.desc %}<p class="card-desc">{{ item.desc }}</p>{% endif %}
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-    <div class="section-action">
-      <a href="/portfolio/" class="btn btn--primary">View full portfolio</a>
-    </div>
-  </div>
-</section>
-{% include reviews-highlights.html %}
+{% include reviews-highlights.html
+  limit=3
+  title="What partners and homeowners say"
+  summary="Consistent workmanship, clean jobsites, and communication you can rely on for every scope." %}
 
 {% include blog-highlights.html %}
 
-<section class="ts-contact" aria-labelledby="ts-contact-title">
-  <div class="container ts-contact__grid">
-    <div class="ts-contact__copy">
-      <span class="eyebrow">Get Started</span>
-      <h2 id="ts-contact-title" class="heading-2">Schedule a Consultation</h2>
-      <p>Request a site visit to discuss your tile installation, remodel, or property maintenance needs. Serving Atlantic, Ocean, and Cape May Counties—most consultations are scheduled within 3 business days.</p>
-      <p class="text-muted">You'll receive a detailed written scope including materials, timelines, waterproofing specs, and transparent pricing. All work is owner-operated and fully documented.</p>
-      <div class="ts-contact__actions">
-        <a class="btn btn--primary" href="mailto:info@tillerstead.com">info@tillerstead.com</a>
-        <a class="btn btn--ghost" href="/contact/">Full Contact Form</a>
-      </div>
-    </div>
-    <aside class="ts-contact__panel" aria-label="Company details">
-      <h3>Company Details</h3>
-      <dl>
-        <dt>Name:</dt><dd>Tillerstead LLC</dd>
-        <dt>License:</dt><dd>NJ HIC #13VH10808800</dd>
-        <dt>Address:</dt><dd>325 E. Jimmie Leeds Road, Suite 7-333, Galloway, NJ 08205</dd>
-        <dt>Email:</dt><dd><a href="mailto:info@tillerstead.com">info@tillerstead.com</a></dd>
-        <dt>Phone:</dt><dd><a href="tel:+16098628808">(609) 862-8808</a></dd>
-      </dl>
-    </aside>
-  </div>
-</section>
-
-<!-- Reduced motion safety: soft-disable animations/transitions for users who prefer it -->
-<style>
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-</style>
+{% include ts-contact.html %}

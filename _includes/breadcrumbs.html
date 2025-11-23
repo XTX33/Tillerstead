@@ -54,12 +54,21 @@ Breadcrumb Navigation Component
             itemprop="itemListElement"
             itemscope
             itemtype="https://schema.org/ListItem">
-          <a itemprop="item"
-             href="{{ current_path | append: '/' | relative_url }}"
-             class="breadcrumb-link"
-             {%- if is_last %} aria-current="page"{%- endif %}>
-            <span itemprop="name">{{ label }}</span>
-          </a>
+          {% assign crumb_href = current_path | append: '/' | relative_url %}
+          {% if is_last %}
+            <a itemprop="item"
+               href="{{ crumb_href }}"
+               class="breadcrumb-link"
+               aria-current="page">
+              <span itemprop="name">{{ label }}</span>
+            </a>
+          {% else %}
+            <a itemprop="item"
+               href="{{ crumb_href }}"
+               class="breadcrumb-link">
+              <span itemprop="name">{{ label }}</span>
+            </a>
+          {% endif %}
           <meta itemprop="position" content="{{ position }}">
         </li>
 

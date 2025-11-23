@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <title>
+      {% if page.seo_title %}
+        {{ page.seo_title }}
+      {% elsif page.title %}
+        {{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}
+      {% else %}
+        {{ site.title }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}
+      {% endif %}
+    </title>
     {% include head.html %}
   </head>
 
@@ -75,7 +84,6 @@
     </main>
 
     <!-- Page footer -->
-        <!DOCTYPE html>
     {% include footer.html %}
 
     <!-- Scripts (deferred for performance) -->

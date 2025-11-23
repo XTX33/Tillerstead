@@ -1,0 +1,4 @@
+/* Adapter to ensure a stable /assets/css/theme.css entry exists for legacy builds.
+   Delegates to the compiled theme bundle generated during the design refresh. */
+@import url("./theme-compiled.css");
+

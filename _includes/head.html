@@ -7,16 +7,6 @@
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<title>
-  {% if page.seo_title %}
-    {{ page.seo_title }}
-  {% elsif page.title %}
-    {{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}
-  {% else %}
-    {{ site.title }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}
-  {% endif %}
-</title>
-
 {%- assign meta_description = page.description | default: site.description | default: 'Tillerstead LLC provides monthly property maintenance, remodeling, and waterproof tile installations for South Jersey homeowners, landlords, and small commercial spaces.' -%}
 <meta name="description" content="{{ meta_description | escape }}">
 <!-- Viewport declared once above to avoid duplication -->
@@ -138,21 +128,18 @@
   @media (min-width:920px){ .hero-kpis{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));} }
   @media (prefers-reduced-motion:reduce){ .btn,.nav-toggle{transition:none;} }
 </style>
-<!-- CSS Architecture - Organized by Layer (consolidated light-theme only) -->
+<!-- Design tokens always come first -->
 <link rel="stylesheet" href="{{ '/assets/styles/tokens.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/breadcrumbs.css' | relative_url }}" media="screen">
 
-<!-- Component Libraries - Light Theme -->
-<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/gallery.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}" media="screen">
-
-<!-- Special Components -->
-<link rel="stylesheet" href="{{ '/assets/css/pattern-showcase.css' | relative_url }}" media="screen">
-{%- comment -%}construction-banner.css removed (deprecated component){%- endcomment -%}
+<!-- Page + theme layers (home.css then theme.css, then every remaining stylesheet to guarantee full coverage) -->
+{%- assign prioritized = 'home.css|theme.css' | split: '|' -%}
+{%- assign remaining = 'base.css|layout.css|components.css|breadcrumbs.css|cards.css|gallery.css|pattern-showcase.css|construction-banner.css' | split: '|' -%}
+{%- assign css_bundle = prioritized | concat: remaining -%}
+{%- for css_file in css_bundle -%}
+  <link rel="stylesheet"
+        href="{{ '/assets/css/' | append: css_file | relative_url }}"
+        media="screen">
+{%- endfor -%}
 
 <!-- Page-Specific Styles -->
 {% if page.styles %}

@@ -36,13 +36,22 @@
           {% assign is_current = true %}
         {% endif %}
         <li role="presentation">
-          <a href="{{ item.url | relative_url }}"
-             class="nav-link"
-             role="menuitem"
-             {% if is_current %}aria-current="page"{% endif %}
-             style="color: var(--color-primary, #222); text-decoration: none; font-weight: 500; padding: var(--space-2, 0.5rem) var(--space-3, 1rem); border-radius: var(--radius-pill, 999px); transition: background 0.2s;">
-            {{ item.title }}
-          </a>
+          {% if is_current %}
+            <a href="{{ item.url | relative_url }}"
+               class="nav-link"
+               role="menuitem"
+               aria-current="page"
+               style="color: var(--color-primary, #222); text-decoration: none; font-weight: 500; padding: var(--space-2, 0.5rem) var(--space-3, 1rem); border-radius: var(--radius-pill, 999px); transition: background 0.2s;">
+              {{ item.title }}
+            </a>
+          {% else %}
+            <a href="{{ item.url | relative_url }}"
+               class="nav-link"
+               role="menuitem"
+               style="color: var(--color-primary, #222); text-decoration: none; font-weight: 500; padding: var(--space-2, 0.5rem) var(--space-3, 1rem); border-radius: var(--radius-pill, 999px); transition: background 0.2s;">
+              {{ item.title }}
+            </a>
+          {% endif %}
         </li>
       {% endfor %}
     </ul>
