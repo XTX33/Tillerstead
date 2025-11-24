@@ -1,0 +1,99 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Ruby > bundle install",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoLogo",
+        "-Command",
+        "& {Set-Location -LiteralPath '${workspaceFolder}'; .\\scripts\\activate-ruby.ps1; bundle install }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Node > npm install",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoLogo",
+        "-Command",
+        "& {Set-Location -LiteralPath '${workspaceFolder}'; npm install }"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup > install everything",
+      "dependsOn": [
+        "Ruby > bundle install",
+        "Node > npm install"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build > CSS only",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoLogo",
+        "-Command",
+        "& {Set-Location -LiteralPath '${workspaceFolder}'; npm run build:css }"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build > full site",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoLogo",
+        "-Command",
+        "& {Set-Location -LiteralPath '${workspaceFolder}'; .\\scripts\\activate-ruby.ps1; npm run build:site }"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Serve > jekyll --livereload",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoLogo",
+        "-Command",
+        "& {Set-Location -LiteralPath '${workspaceFolder}'; .\\scripts\\activate-ruby.ps1; bundle exec jekyll serve --incremental --livereload }"
+      ],
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "owner": "jekyll-serve",
+          "fileLocation": "absolute",
+          "pattern": [
+            {
+              "regexp": "^(?<file>[^:]+):(?<line>\\d+):\\s+(?<message>.+)$",
+              "file": 1,
+              "line": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".*Server running.*",
+            "endsPattern": ".*Ctrl-C to exit.*"
+          }
+        }
+      ]
+    }
+  ]
+}

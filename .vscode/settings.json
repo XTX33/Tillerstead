@@ -1,0 +1,18 @@
+{
+  "terminal.integrated.profiles.windows": {
+    "Ruby Dev Shell": {
+      "path": "powershell.exe",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-NoLogo",
+        "-NoExit",
+        "-Command",
+        "& {Set-Location -LiteralPath '${workspaceFolder}'; .\\scripts\\activate-ruby.ps1 }"
+      ],
+      "icon": "ruby"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Ruby Dev Shell",
+  "terminal.integrated.enablePersistentSessions": false
+}
