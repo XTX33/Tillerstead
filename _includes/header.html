@@ -52,12 +52,12 @@
               <a href="{{ item.url | relative_url }}" class="nav-link{% if is_current %} active{% endif %}" role="menuitem"{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a>
             </li>
           {% endfor %}
-      <!-- Markup above already contains closing tags for ul, nav, and div. Remove duplicate closing tags below. -->
+      <!-- All tags are now properly paired above. No duplicate closing tags needed. -->
+
+      <!-- Header actions -->
         </ul>
       </nav>
     </div>
-
-    <!-- Header actions -->
     <div class="site-header-actions" role="group" aria-label="Site actions">
       <a class="call-btn"
          href="tel:{{ site.company.phone_link | default: '+16098628808' }}"
