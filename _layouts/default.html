@@ -67,7 +67,9 @@
       {%- endif -%}
 
       <!-- Page content: full-width or contained -->
-      {% if page.is_home or page.full_width %}
+      {% if page.is_home %}
+        {% include homepage-sections.html %}
+      {% elsif page.full_width %}
         {{ content }}
       {% else %}
         <article class="page-content section" itemscope itemtype="https://schema.org/WebPage">
