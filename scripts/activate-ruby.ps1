@@ -32,13 +32,24 @@ function Resolve-RubyInstallerRoot {
   }
 
   $candidates = @(
+    "$env:ProgramFiles\Ruby34-x64",
     "$env:ProgramFiles\Ruby33-x64",
     "$env:ProgramFiles\Ruby32-x64",
     "$env:ProgramFiles\Ruby31-x64",
+    "C:\Ruby34-x64",
     "C:\Ruby33-x64",
     "C:\Ruby32-x64",
     "C:\Ruby31-x64"
   )
+
+  $discoveryRoots = @("$env:ProgramFiles", "C:\")
+  foreach ($root in $discoveryRoots) {
+    $found = Get-ChildItem -Path $root -Directory -Filter 'Ruby3*-x64' -ErrorAction SilentlyContinue
+    $candidates += $found.FullName
+  }
+
+  $candidates = $candidates | Where-Object { $_ } | Select-Object -Unique
+
   foreach ($candidate in $candidates) {
     if (Test-Path (Join-Path $candidate 'bin\ruby.exe')) {
       return (Resolve-Path $candidate).ProviderPath
