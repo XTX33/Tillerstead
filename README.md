@@ -22,12 +22,13 @@ npm run build:site   # runs Sass build + bundle exec jekyll build
 If `scripts/activate-ruby.ps1` cannot find RubyInstaller it will stop with a helpful message that includes the download URL. Once activated, the terminal echoes the Ruby version so you know the environment is ready.
 
 ## VS Code workflow
-1. Install the recommended extensions when VS Code prompts. Once accepted, every new integrated terminal defaults to **Ruby Dev Shell**, which cd's to the workspace and runs `scripts/activate-ruby.ps1` automatically so Bundler/Jekyll are always on the `PATH`.
+1. Install the recommended extensions when VS Code prompts (including the Ruby LSP). Once accepted, every new integrated terminal defaults to **Ruby Dev Shell**, which cd's to the workspace and runs `scripts/activate-ruby.ps1` automatically so Bundler/Jekyll are always on the `PATH`.
 2. Use the pre-wired tasks (Terminal > Run Task...) for repeatable commands:
    - `Setup > install everything` runs `bundle install` and `npm install`.
    - `Build > full site` mirrors `npm run build:site` with the Ruby env preloaded.
    - `Serve > jekyll --livereload` starts `bundle exec jekyll serve --incremental --livereload` and stays attached so you can stop it with Ctrl+C.
 3. If a shell is still "looking for Ruby", open the command palette > `Terminal: Select Default Profile` > choose **Ruby Dev Shell**, then create a fresh terminal. Existing panes can be fixed by running `powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1`.
+4. Having trouble getting the Ruby LSP extension to activate? Follow the checklist in [`RUBY_LSP_TROUBLESHOOTING.md`](./RUBY_LSP_TROUBLESHOOTING.md) to confirm Ruby is available to VS Code, the correct version manager is configured, and macOS/Windows permissions are granted.
 
 # Tillerstead.com
 

@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "yandeu.five-server",
-        "htmlhint.vscode-htmlhint"
+        "htmlhint.vscode-htmlhint",
+        "shopify.ruby-lsp"
     ]
 }
