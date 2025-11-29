@@ -1,44 +1,56 @@
 <!-- Unified Maintenance Plans Section -->
-<section class="ts-plans bg-surface-elevated rounded-lg shadow-lift py-8" aria-labelledby="ts-plans-title">
+<section class="ts-plans" aria-labelledby="ts-plans-title">
   <div class="container">
-    <header class="ts-plans__header mb-6 text-center">
-      <span class="eyebrow text-accent mb-2 d-block">Property Care Programs</span>
-      <h2 id="ts-plans-title" class="heading-2 text-primary mb-3">Monthly Maintenance Plans for Shore Properties</h2>
-      <p class="lead text-surface">{{ summary }}</p>
+    <header class="ts-plans__header">
+      <span class="eyebrow text-accent">Property Care Programs</span>
+      <h2 id="ts-plans-title" class="heading-2 text-primary">Monthly Maintenance Plans for Shore Properties</h2>
+      <p class="lead">{{ summary }}</p>
     </header>
-    <div class="ts-plans__grid grid gap-6 md:grid-cols-3 mb-8">
-      <section class="ts-plan-card bg-surface rounded-lg shadow-soft p-5 flex flex-col">
-        <h3 class="heading-3 text-primary mb-3">Core Checklist</h3>
-        <ul class="list-disc pl-5 text-surface">
-          <li>Moisture, leak, and HVAC inspections</li>
-          <li>Minor repairs completed on the spot</li>
-          <li>On-call support between visits</li>
-        </ul>
-      </section>
-      <section class="ts-plan-card bg-surface rounded-lg shadow-soft p-5 flex flex-col">
-        <h3 class="heading-3 text-primary mb-3">Concierge Add-ons</h3>
-        <ul class="list-disc pl-5 text-surface">
-          <li>Vendor coordination &amp; key holder services</li>
-          <li>Storm prep and post-event inspections</li>
-          <li>Supply restocking &amp; turnover prep</li>
-        </ul>
-      </section>
-      <section class="ts-plan-card ts-plan-card--accent bg-gradient-primary text-surface rounded-lg shadow-lift p-5 flex flex-col">
-        <h3 class="heading-3 text-accent mb-3">Transparent Reporting</h3>
-        <p class="mb-4">Each maintenance cycle ships with a written report, timestamped photos, and next-step recommendations so you can make decisions quickly—even when you are out of state. All change orders are delivered in writing for full transparency.</p>
-        <dl class="ts-plan-stats grid grid-cols-2 gap-4">
-          <div>
-            <dt class="heading-4 text-primary">&lt;24 hrs</dt>
-            <dd class="text-surface">response time for maintenance clients</dd>
-          </div>
-          <div>
-            <dt class="heading-4 text-primary">100%</dt>
-            <dd class="text-surface">of change orders delivered in writing</dd>
-          </div>
-        </dl>
-      </section>
+
+    <div class="ts-plans__grid" role="list">
+      <article class="ts-plan-card" role="listitem">
+        <div class="ts-plan-card__body">
+          <h3 class="heading-3 text-primary">Core Checklist</h3>
+          <p class="ts-plan-card__summary">Baseline protection that keeps rentals, shore homes, and primary residences buttoned up.</p>
+          <ul>
+            <li>Moisture, leak, and HVAC inspections</li>
+            <li>Minor repairs handled during the visit</li>
+            <li>On-call support between appointments</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="ts-plan-card" role="listitem">
+        <div class="ts-plan-card__body">
+          <h3 class="heading-3 text-primary">Concierge Add-ons</h3>
+          <p class="ts-plan-card__summary">Owner support when you are away so guests and tenants arrive to a ready home.</p>
+          <ul>
+            <li>Vendor coordination &amp; secured key holding</li>
+            <li>Storm prep and post-event photo reports</li>
+            <li>Supply restocking &amp; turnover prep</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="ts-plan-card ts-plan-card--accent" role="listitem">
+        <div class="ts-plan-card__body">
+          <h3 class="heading-3 text-primary">Transparent Reporting</h3>
+          <p class="ts-plan-card__summary">Every visit ships with written notes, time-stamped photos, and clear next steps so you can approve decisions quickly.</p>
+          <dl class="ts-plan-stats">
+            <div>
+              <dt class="heading-4 text-primary">&lt;24 hrs</dt>
+              <dd>Response time for maintenance clients</dd>
+            </div>
+            <div>
+              <dt class="heading-4 text-primary">100%</dt>
+              <dd>Change orders delivered in writing</dd>
+            </div>
+          </dl>
+        </div>
+      </article>
     </div>
-    <nav class="ts-plans__actions flex justify-center gap-4">
+
+    <nav class="ts-plans__actions" aria-label="Maintenance plan actions">
       <a class="btn btn--primary" href="/services/#maintenance">See Maintenance Coverage</a>
       <a class="btn btn--ghost" href="/contact/">Request a Plan Walkthrough</a>
     </nav>
