@@ -1,26 +1,4 @@
 {% assign testimonials = include.testimonials | default: page.testimonials %}
-{% unless testimonials %}
-  {% capture testimonials_json %}
-[
-  {
-    "quote": "Scheduling was clear, the scope was documented, and every update came with photos. Our rental stayed booked because the repairs were finished ahead of turnover.",
-    "name": "Mara D., Property Owner",
-    "role": "Longport, NJ"
-  },
-  {
-    "quote": "Tile work and waterproofing were meticulous. Communication was steady, and the jobsite stayed clean even while the unit was occupied.",
-    "name": "James R., HOA Board Member",
-    "role": "Atlantic County"
-  },
-  {
-    "quote": "As a landlord, I need fast response and proof of work. Tillerstead delivered both with organized maintenance visits and clear pricing.",
-    "name": "Priya S., Landlord",
-    "role": "Galloway, NJ"
-  }
-]
-  {% endcapture %}
-  {% assign testimonials = site.data.reviews | default: testimonials_json %}
-{% endunless %}
 
 <section class="ts-testimonials" aria-labelledby="ts-testimonials-title">
   <div class="container">
@@ -30,15 +8,39 @@
       <p class="lead">Owner-led communication, daily photos, and durable finishes give landlords and homeowners confidence from the first walkthrough to the final punch list.</p>
     </header>
     <div class="ts-testimonials__grid" role="list">
-      {% for testimonial in testimonials %}
+      {% if testimonials %}
+        {% for testimonial in testimonials %}
+          <article class="ts-testimonial" role="listitem">
+            <p class="ts-testimonial__quote">"{{ testimonial.quote }}"</p>
+            <div class="ts-testimonial__meta">
+              <span class="ts-testimonial__name">{{ testimonial.name }}</span>
+              <span class="ts-testimonial__role">{{ testimonial.role }}</span>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
         <article class="ts-testimonial" role="listitem">
-          <p class="ts-testimonial__quote">“{{ testimonial.quote }}”</p>
+          <p class="ts-testimonial__quote">"Scheduling was clear, the scope was documented, and every update came with photos. Our rental stayed booked because the repairs were finished ahead of turnover."</p>
           <div class="ts-testimonial__meta">
-            <span class="ts-testimonial__name">{{ testimonial.name }}</span>
-            <span class="ts-testimonial__role">{{ testimonial.role }}</span>
+            <span class="ts-testimonial__name">Mara D., Property Owner</span>
+            <span class="ts-testimonial__role">Longport, NJ</span>
           </div>
         </article>
-      {% endfor %}
+        <article class="ts-testimonial" role="listitem">
+          <p class="ts-testimonial__quote">"Tile work and waterproofing were meticulous. Communication was steady, and the jobsite stayed clean even while the unit was occupied."</p>
+          <div class="ts-testimonial__meta">
+            <span class="ts-testimonial__name">James R., HOA Board Member</span>
+            <span class="ts-testimonial__role">Atlantic County</span>
+          </div>
+        </article>
+        <article class="ts-testimonial" role="listitem">
+          <p class="ts-testimonial__quote">"As a landlord, I need fast response and proof of work. Tillerstead delivered both with organized maintenance visits and clear pricing."</p>
+          <div class="ts-testimonial__meta">
+            <span class="ts-testimonial__name">Priya S., Landlord</span>
+            <span class="ts-testimonial__role">Galloway, NJ</span>
+          </div>
+        </article>
+      {% endif %}
     </div>
     <div class="ts-testimonials__logos" aria-label="Trusted by property teams">
       <div class="ts-testimonials__logo">Shoreline Rentals</div>
