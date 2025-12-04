@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// Run via: VS Code Command Palette → "Run Task" → "Sync Thumbtack Reviews"
+// Or via NPM Scripts panel → "sync:thumbtack"
 /**
  * Sync live Thumbtack reviews into _data/reviews.yml.
  * Run locally with: `node scripts/sync_thumbtack_reviews.js`

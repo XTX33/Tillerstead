@@ -14,7 +14,8 @@
     "build": "npm run build:css",
     "build:site": "npm run build:css && (bundle check || bundle install) && bundle exec jekyll build",
     "images:webp": "node scripts/convert-images-to-webp.js",
-    "slugify": "node scripts/slugify.js"
+    "slugify": "node scripts/slugify.js",
+    "sync:thumbtack": "node scripts/sync_thumbtack_reviews.js"
   },
   "devDependencies": {
     "cheerio": "1.0.0-rc.12",
