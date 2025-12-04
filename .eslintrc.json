@@ -17,5 +17,17 @@
     "vendor/",
     "_site/",
     "*.min.js"
+  ],
+  "overrides": [
+    {
+      "files": ["scripts/**/*.js"],
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    }
   ]
 }
