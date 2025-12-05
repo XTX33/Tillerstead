@@ -108,18 +108,17 @@
       max-width: 340px;
     }
 
-    /* Make logo visible on dark background.
-       If you later create a "light" logo SVG, swap the src and remove this filter. */
-    .footer-logo-img {
-      display: block;
-      margin-bottom: 1rem;
-      max-width: 220px;
-      max-height: 72px;
-      height: auto;
-      width: 100%;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-    }
+ .footer-logo-img {
+  display: block;
+  margin-bottom: 1rem;
+  max-width: 220px;
+  max-height: 72px;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  background: transparent;
+  filter: none; /* ensure nothing overrides later */
+}
 
     .footer-tagline {
       font-size: 1.1rem;
