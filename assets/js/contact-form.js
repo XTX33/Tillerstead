@@ -5,9 +5,14 @@
     const subject = encodeURIComponent('New Tillerstead project inquiry');
     const bodyLines = [];
     formData.forEach((value, key) => {
-      bodyLines.push(`${key}: ${value}`);
+      // Skip internal fields like form-name, honeypot, etc.
+      if (key === 'form-name' || key === 'bot-field' || key === '_trap') return;
+      // Normalize line breaks to CRLF for email clients
+      const cleanValue = String(value).replace(/\r\n/g, '\n').replace(/\r/g, '\n').replace(/\n/g, '\r\n');
+      bodyLines.push(`${key}: ${cleanValue}`);
     });
-    const body = encodeURIComponent(bodyLines.join('\n'));
+    // Use double CRLF between fields for readability
+    const body = encodeURIComponent(bodyLines.join('\r\n\r\n'));
     return `mailto:info@tillerstead.com?subject=${subject}&body=${body}`;
   };
 
