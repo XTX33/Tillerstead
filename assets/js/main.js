@@ -128,13 +128,14 @@
   });
 
   /* =========================
-     THEME: manual toggle with memory
-     - toggles html.classList 'light'
-     - defaults to dark theme (brand design)
+     THEME: toggle with memory
+     - uses html[data-theme]
+     - defaults to light unless user saved preference
   ========================= */
   const THEME_KEY = "ts:theme";
-  const themeBtn = $(".theme-toggle");
-  const DEFAULT_THEME = "dark";
+  const themeBtn = document.querySelector("[data-theme-toggle]");
+  const prefersDark =
+    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   const getStoredTheme = () => {
     try {
@@ -145,30 +146,37 @@
     }
   };
 
-  const applyTheme = (theme) => {
-    const isLight = theme === "light";
-    document.documentElement.classList.toggle("light", isLight);
-    themeBtn?.setAttribute("aria-pressed", String(isLight));
+  const swapLogos = (theme) => {
+    $$("img[data-logo-light][data-logo-dark]").forEach((img) => {
+      const next = theme === "dark" ? img.dataset.logoDark : img.dataset.logoLight;
+      if (next && img.getAttribute("src") !== next) {
+        img.setAttribute("src", next);
+      }
+    });
   };
 
-  let saved = null;
-  try {
-    saved = localStorage.getItem(THEME_KEY);
-  } catch (_) {
-    saved = null;
-  }
+  const applyTheme = (theme) => {
+    const normalized = theme === "dark" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", normalized);
+    themeBtn?.setAttribute("aria-pressed", String(normalized === "dark"));
+    const label = normalized === "dark" ? "Dark" : "Light";
+    const labelEl = themeBtn ? themeBtn.querySelector(".theme-toggle__label") : null;
+    if (labelEl) {
+      labelEl.textContent = label;
+    }
+    swapLogos(normalized);
+  };
 
-  // Default to dark theme (brand design) unless user explicitly saved a preference
-  applyTheme(saved || "dark");
-  const savedTheme = getStoredTheme();
-  applyTheme(savedTheme || DEFAULT_THEME);
+  const storedTheme = getStoredTheme();
+  const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
+  applyTheme(initialTheme);
 
   themeBtn?.addEventListener("click", () => {
-    const isLight = document.documentElement.classList.toggle("light");
-    const theme = isLight ? "light" : "dark";
-    themeBtn.setAttribute("aria-pressed", String(isLight));
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    applyTheme(next);
     try {
-      localStorage.setItem(THEME_KEY, theme);
+      localStorage.setItem(THEME_KEY, next);
     } catch (_) {
       /* ignore */
     }

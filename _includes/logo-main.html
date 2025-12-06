@@ -18,13 +18,13 @@ Params:
   {%- assign logo_img_classes = include.img_class -%}
 {%- endif -%}
 
+{%- assign logo_src_light = '/assets/img/logo/tillerstead-logo-header.svg' -%}
+{%- assign logo_src_dark = '/assets/img/logo/tillerstead-logo-header-dark.svg' -%}
 {%- assign logo_variant = include.variant | default: 'light' -%}
-{%- case logo_variant -%}
-  {%- when 'dark' -%}
-    {%- assign logo_src = '/assets/img/logo/tillerstead-logo-header-dark.svg' -%}
-  {%- else -%}
-    {%- assign logo_src = '/assets/img/logo/tillerstead-logo-header.svg' -%}
-{%- endcase -%}
+{%- assign logo_src = logo_src_light -%}
+{%- if logo_variant == 'dark' -%}
+  {%- assign logo_src = logo_src_dark -%}
+{%- endif -%}
 
 {%- assign logo_alt = include.alt | default: 'Tillerstead – Property Maintenance, Remodeling, Tile' -%}
 
@@ -34,6 +34,8 @@ Params:
    aria-label="Tillerstead LLC home">
   <img class="{{ logo_img_classes }}"
        src="{{ logo_src | relative_url }}"
+       data-logo-light="{{ logo_src_light | relative_url }}"
+       data-logo-dark="{{ logo_src_dark | relative_url }}"
        alt="{{ logo_alt }}"
        loading="eager"
        decoding="async">

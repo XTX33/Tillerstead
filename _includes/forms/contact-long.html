@@ -28,6 +28,7 @@
         id="{{ include.prefix }}name"
         name="name"
         type="text"
+        class="ts-input"
         required
         aria-required="true"
         autocomplete="name"
@@ -43,6 +44,7 @@
         id="{{ include.prefix }}company"
         name="company"
         type="text"
+        class="ts-input"
         autocomplete="organization"
         placeholder="GC, remodeling firm, or property team"
       >
@@ -56,6 +58,7 @@
         id="{{ include.prefix }}email"
         name="email"
         type="email"
+        class="ts-input"
         required
         aria-required="true"
         autocomplete="email"
@@ -72,6 +75,7 @@
         id="{{ include.prefix }}phone"
         name="phone"
         type="tel"
+        class="ts-input"
         required
         aria-required="true"
         autocomplete="tel"
@@ -88,6 +92,7 @@
         id="{{ include.prefix }}city"
         name="city"
         type="text"
+        class="ts-input"
         required
         aria-required="true"
         autocomplete="address-level2"
@@ -97,7 +102,7 @@
 
     <div class="form-field">
       <label for="{{ include.prefix }}property-type">Property type</label>
-      <select id="{{ include.prefix }}property-type" name="property_type">
+      <select id="{{ include.prefix }}property-type" name="property_type" class="ts-select">
         <option value="">Select an option</option>
         <option>Single-family home</option>
         <option>Rental property / landlord</option>
@@ -109,7 +114,7 @@
 
     <div class="form-field">
       <label for="{{ include.prefix }}project-type">Project type</label>
-      <select id="{{ include.prefix }}project-type" name="project_type">
+      <select id="{{ include.prefix }}project-type" name="project_type" class="ts-select">
         <option value="">Select an option</option>
         <option>Monthly Maintenance Plan</option>
         <option>Kitchen or Bathroom Remodel</option>
@@ -124,7 +129,7 @@
 
     <div class="form-field">
       <label for="{{ include.prefix }}timeline">Ideal timeline</label>
-      <select id="{{ include.prefix }}timeline" name="timeline">
+      <select id="{{ include.prefix }}timeline" name="timeline" class="ts-select">
         <option value="">Select an option</option>
         <option>ASAP / urgent</option>
         <option>Within 30 days</option>
@@ -143,6 +148,7 @@
       id="{{ include.prefix }}details"
       name="details"
       rows="6"
+      class="ts-textarea"
       required
       aria-required="true"
       placeholder="Share details about your property, maintenance needs, remodeling scope, or tile project. Include address/location, property type, timeline, and any specific concerns or requirements."
@@ -157,6 +163,7 @@
       id="{{ include.prefix }}photos"
       name="photos"
       type="url"
+      class="ts-input"
       inputmode="url"
       placeholder="Link to Google Drive, PlanGrid, Dropbox, etc."
     >
@@ -169,6 +176,7 @@
     <select
       id="{{ include.prefix }}request-type"
       name="request_type"
+      class="ts-select"
       required
       aria-required="true"
     >
@@ -189,7 +197,7 @@
 
   <div class="form-status sr-only" aria-live="polite" data-form-status></div>
 
-  <button type="submit" class="btn btn-primary" aria-describedby="{{ include.prefix }}privacy-note">
+  <button type="submit" class="btn btn--primary ts-button ts-button--primary" aria-describedby="{{ include.prefix }}privacy-note">
     {{ include.button_label | default: 'Submit request' }}
   </button>
 </form>

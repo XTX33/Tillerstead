@@ -6,7 +6,7 @@
   <div class="site-header-inner">
     <!-- Brand -->
     <div class="ts-brand">
-      {% include logo-main.html class="ts-logo-link--header" img_class="ts-logo ts-logo--header" variant="dark" %}
+      {% include logo-main.html class="ts-logo-link--header" img_class="ts-logo ts-logo--header" variant="light" %}
     </div>
 
     <!-- Navigation container -->
@@ -70,6 +70,15 @@
           {{ site.company.phone_display | default: '(609) 862-8808' }}
         </span>
       </a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Toggle dark mode">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </span>
+        <span class="theme-toggle__label">Theme</span>
+      </button>
       <button type="button"
               class="nav-toggle site-nav-toggle"
               aria-controls="site-nav"
