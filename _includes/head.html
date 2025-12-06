@@ -2,254 +2,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<!-- Performance & Security -->
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 {%- assign meta_description = page.description | default: site.description | default: 'Tillerstead LLC provides monthly property maintenance, remodeling, and waterproof tile installations for South Jersey homeowners, landlords, and small commercial spaces.' -%}
 <meta name="description" content="{{ meta_description | escape }}">
-<!-- Viewport declared once above to avoid duplication -->
-
 {%- assign meta_keywords = page.keywords | default: site.keywords -%}
-{% if meta_keywords %}
-  <meta name="keywords" content="{{ meta_keywords | join: ', ' }}">
-{% endif %}
-
+{% if meta_keywords %}<meta name="keywords" content="{{ meta_keywords | join: ', ' }}">{% endif %}
 <meta name="author" content="{{ site.company.owner | default: 'Tillerstead LLC' }}">
 <meta name="geo.region" content="US-NJ">
 <meta name="geo.placename" content="{{ site.company.address_locality | default: 'Atlantic County' }}, New Jersey">
 <meta name="format-detection" content="telephone=no">
-{% if site.company.hic %}
-  <meta name="license" content="New Jersey Home Improvement Contractor License #{{ site.company.hic }}">
-{% endif %}
-
+{% if site.company.hic %}<meta name="license" content="New Jersey Home Improvement Contractor License #{{ site.company.hic }}">{% endif %}
 {% if page.noindex %}
   <meta name="robots" content="noindex, nofollow">
 {% else %}
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 {% endif %}
 
-<!-- Canonical URL for SEO -->
-{% if site.url %}
-  <link rel="canonical" href="{{ page.url | replace: 'index.html','' | absolute_url }}">
-{% endif %}
+<!-- Canonical URL -->
+{% if site.url %}<link rel="canonical" href="{{ page.url | replace: 'index.html','' | absolute_url }}">{% endif %}
 
 <!-- Theme / Icons -->
-<meta name="theme-color" content="#0f8a5f">
+<meta name="theme-color" content="#0b1421">
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}" sizes="any">
 <link rel="apple-touch-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}">
 <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
-<link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#0f8a5f">
-<link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#0b6f4c">
-<meta name="theme-color" content="#0f766e">
-<meta name="theme-color" content="#1a2b4c">
-<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}" sizes="any">
-<link rel="apple-touch-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}">
-<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
-<link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#0f766e">
+<link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#1cb394">
+<link rel="preload" as="image" href="{{ '/assets/img/logo/tillerstead-logo-full.svg' | relative_url }}" fetchpriority="high">
 
-<!-- Open Graph / Social Meta -->
+<!-- Social -->
 {%- assign og_title = page.seo_title | default: page.title | default: site.title -%}
 {%- assign og_description = meta_description -%}
 {%- assign og_image = page.og_image | default: site.default_og_image | default: '/assets/img/og.jpg' -%}
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ og_title | truncate: 60 }}">
 <meta property="og:description" content="{{ og_description | escape | truncate: 160 }}">
 <meta property="og:site_name" content="Tillerstead LLC">
 <meta property="og:locale" content="en_US">
-
-{% if site.url %}
-  {% assign og_url = page.url | replace: 'index.html','' %}
-  <meta property="og:url" content="{{ site.url }}{{ og_url }}">
-{% endif %}
-
+{% if site.url %}{% assign og_url = page.url | replace: 'index.html','' %}<meta property="og:url" content="{{ site.url }}{{ og_url }}">{% endif %}
 <meta property="og:image" content="{{ og_image | absolute_url }}">
 <meta property="og:image:alt" content="Tillerstead LLC - Property Maintenance, Remodeling & Tile in South Jersey">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<!-- Preload hero logo for faster LCP -->
-<link rel="preload" as="image" href="{{ '/assets/img/logo/tillerstead-logo-full.svg' | relative_url }}" imagesrcset="{{ '/assets/img/logo/tillerstead-logo-full.svg' | relative_url }}" fetchpriority="high">
-
-<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | truncate: 70 }}">
 <meta name="twitter:description" content="{{ og_description | escape | truncate: 160 }}">
 <meta name="twitter:image" content="{{ og_image | absolute_url }}">
 <meta name="twitter:image:alt" content="Tillerstead LLC - Property Maintenance, Remodeling & Tile in South Jersey">
 
-<!-- Business Contact Microdata -->
+<!-- Business contact microdata -->
 <meta property="business:contact_data:street_address" content="{{ site.company.address_line | default: '' }}">
 <meta property="business:contact_data:locality" content="{{ site.company.address_locality | default: '' }}">
 <meta property="business:contact_data:region" content="{{ site.company.address_region | default: 'NJ' }}">
 <meta property="business:contact_data:postal_code" content="{{ site.company.address_postal_code | default: '' }}">
 <meta property="business:contact_data:country_name" content="United States">
 <meta property="business:contact_data:phone_number" content="{{ site.company.phone_display | default: '(609) 862-8808' }}">
-{% if site.url %}
-  <meta property="business:contact_data:website" content="{{ site.url }}">
-{% endif %}
+{% if site.url %}<meta property="business:contact_data:website" content="{{ site.url }}">{% endif %}
 
-<!-- Performance: DNS Prefetch & Preconnect -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- Preload Critical CSS (corrected path for tokens) -->
-<link rel="preload" href="{{ '/assets/styles/tokens.css' | relative_url }}" as="style">
-<link rel="preload" href="{{ '/assets/css/base.css' | relative_url }}" as="style">
-
-<!-- Fonts: Optimized Loading with Font Display -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'">
-<noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-</noscript>
-
-<!-- Inline critical CSS: minimal above-the-fold (header, hero, buttons, layout) -->
-<style data-critical>
-  :root { color-scheme: light; }
-  body { margin:0; font-family: var(--font-body, system-ui); background: var(--color-bg,#f6edda); color: var(--color-text,#2f2a25); }
-  .site-header { position:sticky; top:0; z-index:1000; background:rgba(255,250,242,.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(12,79,53,.12); }
-  .site-header-inner { display:flex; align-items:center; justify-content:space-between; gap:.75rem; min-height:4rem; padding:.75rem clamp(.75rem,3vw,1.5rem); }
-  .site-logo-img,
-  .site-logo-svg { width:clamp(180px,32vw,260px); height:auto; max-height:96px; display:block; }
-  .nav-toggle { display:inline-flex; align-items:center; gap:.5rem; border:1px solid rgba(12,79,53,.22); background:transparent;color:var(--color-text,#0c4f35); font-size:.9rem; font-weight:600; min-width:44px; min-height:44px; padding:.5rem .9rem; border-radius:999px; cursor:pointer; }
-  .nav-toggle:hover { background:rgba(24,178,121,.1); border-color:rgba(24,178,121,.4); }
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1.4rem; font-size:.95rem; font-weight:700; line-height:1.2; border-radius:0.75rem; text-decoration:none; background:linear-gradient(135deg,#0f8a5f,#0b6f4c); color:#ffffff; border:1px solid rgba(12,79,53,.55); box-shadow:0 8px 20px rgba(12,79,53,.18); transition:box-shadow .15s,transform .15s; min-height:44px; }
-  .btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(12,79,53,.24); }
-  .btn.btn-ghost { background:transparent; color:var(--color-text,#0c4f35); box-shadow:none; border:1px solid rgba(12,79,53,.18); }
-  .btn.btn-ghost:hover { background:rgba(24,178,121,.12); border-color:rgba(24,178,121,.4); }
-  .hero-title { font-family: var(--font-heading, 'Montserrat'); font-weight:800; letter-spacing:-.02em; line-height:1.1; font-size:clamp(2.2rem,3.6vw,3.2rem); margin:0 0 1rem; color:#0c4f35; }
-  .hero-lead { font-size:1.05rem; line-height:1.65; max-width:65ch; margin:0 0 1.25rem; color:var(--color-text-muted,#4a4339); }
-  .hero-actions { display:flex; flex-wrap:wrap; gap:.75rem; }
-  .eyebrow,.hero-eyebrow { display:inline-block; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; margin:0 0 .75rem; color:#0f8a5f; padding:.4rem .9rem; background:rgba(24,178,121,.12); border-left:3px solid #0b6f4c; border-radius:.35rem; }
-  .hero-kpis { display:grid; gap:.75rem; margin:1.25rem 0 0; padding:0; list-style:none; }
-  .hero-kpi { padding:.9rem 1rem; border:1px solid rgba(12,79,53,.16); border-left:4px solid #0f8a5f; border-radius:1rem; background:linear-gradient(135deg,rgba(12,79,53,.06),rgba(24,178,121,.08)); }
-  .hero-kpi-label { display:block; font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin:0 0 .25rem; color:#0c4f35; }
-  .site-header { position:sticky; top:0; z-index:1000; background:color-mix(in srgb, var(--color-surface,#fffaf2) 92%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--color-border,rgba(15,138,95,.16)); }
-  .site-header-inner { display:flex; align-items:center; justify-content:space-between; gap:.75rem; min-height:4rem; padding:.75rem clamp(.75rem,3vw,1.5rem); }
-  .site-logo-img,
-  .site-logo-svg { width:clamp(180px,32vw,260px); height:auto; max-height:96px; display:block; }
-  .nav-toggle { display:inline-flex; align-items:center; gap:.5rem; border:1px solid var(--color-border,rgba(15,138,95,.16)); background:transparent; color:var(--color-heading,#0c4f35); font-size:.9rem; font-weight:600; min-width:44px; min-height:44px; padding:.5rem .9rem; border-radius:999px; cursor:pointer; }
-  .nav-toggle:hover { background:var(--color-primary-soft,rgba(15,138,95,.12)); border-color:var(--color-border-strong,rgba(15,138,95,.28)); }
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1.4rem; font-size:.95rem; font-weight:700; line-height:1.2; border-radius:0.75rem; text-decoration:none; background:var(--gradient-primary, linear-gradient(135deg,#0f8a5f,#0b6f4c)); color:#ffffff; border:1px solid var(--color-primary-strong,#0b6f4c); box-shadow:var(--shadow-button,0 8px 20px rgba(24,178,121,.22)); transition:box-shadow .15s,transform .15s, background .15s; min-height:44px; }
-  .btn:hover { transform:translateY(-2px); box-shadow:var(--shadow-button-hover,0 12px 28px rgba(24,178,121,.3)); background:var(--gradient-accent,linear-gradient(135deg,#18b279,#0f9663)); }
-  .btn.btn-ghost { background:var(--color-surface,#fffaf2); color:var(--color-heading,#0c4f35); box-shadow:none; border:1px solid var(--color-border,rgba(15,138,95,.16)); }
-  .btn.btn-ghost:hover { background:var(--color-primary-soft,rgba(15,138,95,.14)); border-color:var(--color-border-strong,rgba(15,138,95,.3)); color:var(--color-heading,#0c4f35); }
-  .hero-title { font-family: var(--font-heading, 'Montserrat'); font-weight:800; letter-spacing:-.02em; line-height:1.1; font-size:clamp(2.2rem,3.6vw,3.2rem); margin:0 0 1rem; color:var(--color-heading,#0c4f35); }
-  .hero-lead { font-size:1.05rem; line-height:1.65; max-width:65ch; margin:0 0 1.25rem; color:var(--color-text-muted,#4a4339); }
-  .hero-actions { display:flex; flex-wrap:wrap; gap:.75rem; }
-  .eyebrow,.hero-eyebrow { display:inline-block; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; margin:0 0 .75rem; color:var(--color-heading,#0c4f35); padding:.4rem .9rem; background:var(--color-primary-soft,rgba(15,138,95,.12)); border-left:3px solid var(--color-primary-strong,#0b6f4c); border-radius:.35rem; }
-  .hero-kpis { display:grid; gap:.75rem; margin:1.25rem 0 0; padding:0; list-style:none; }
-  .hero-kpi { padding:.9rem 1rem; border:1px solid var(--color-border,rgba(15,138,95,.16)); border-left:4px solid var(--color-accent,#18b279); border-radius:1rem; background:linear-gradient(135deg,rgba(15,138,95,.06),rgba(24,178,121,.08)); }
-  .hero-kpi-label { display:block; font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin:0 0 .25rem; color:var(--color-heading,#0c4f35); }
-  body { margin:0; font-family: var(--font-body, system-ui); background: var(--color-bg,#f4ecdc); color: var(--color-text,#1f2a24); }
-  .site-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(13,75,62,.14); }
-  .site-header-inner { display:flex; align-items:center; justify-content:space-between; gap:.75rem; min-height:4rem; padding:.75rem clamp(.75rem,3vw,1.5rem); }
-  .site-logo-img,
-  .site-logo-svg { width:clamp(180px,32vw,260px); height:auto; max-height:96px; display:block; }
-  .nav-toggle { display:inline-flex; align-items:center; gap:.5rem; border:1px solid rgba(13,75,62,.2); background:transparent; color:var(--color-text,#1f2a24); font-size:.9rem; font-weight:600; min-width:44px; min-height:44px; padding:.5rem .9rem; border-radius:999px; cursor:pointer; }
-  .nav-toggle:hover { background:rgba(19,179,143,.08); border-color:rgba(19,179,143,.4); }
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1.4rem; font-size:.95rem; font-weight:700; line-height:1.2; border-radius:0.75rem; text-decoration:none; background:linear-gradient(135deg,#0f766e,#0b5f56); color:#ffffff; border:1px solid rgba(13,75,62,.6); box-shadow:0 8px 20px rgba(0,0,0,.12); transition:box-shadow .15s,transform .15s; min-height:44px; }
-  .btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.18); }
-  .btn.btn-ghost { background:transparent; color:var(--color-text,#1f2a24); box-shadow:none; border:1px solid rgba(13,75,62,.18); }
-  .btn.btn-ghost:hover { background:rgba(19,179,143,.08); border-color:rgba(19,179,143,.35); }
-  .hero-title { font-family: var(--font-heading, 'Montserrat'); font-weight:800; letter-spacing:-.02em; line-height:1.1; font-size:clamp(2.2rem,3.6vw,3.2rem); margin:0 0 1rem; color:#12332b; }
-  .hero-lead { font-size:1.05rem; line-height:1.65; max-width:65ch; margin:0 0 1.25rem; color:var(--color-text-muted,#4a5568); }
-  .hero-actions { display:flex; flex-wrap:wrap; gap:.75rem; }
-  .eyebrow,.hero-eyebrow { display:inline-block; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; margin:0 0 .75rem; color:#13b38f; padding:.4rem .9rem; background:rgba(19,179,143,.12); border-left:3px solid #0f766e; border-radius:.35rem; }
-  .hero-kpis { display:grid; gap:.75rem; margin:1.25rem 0 0; padding:0; list-style:none; }
-  .hero-kpi { padding:.9rem 1rem; border:1px solid rgba(13,75,62,.16); border-left:4px solid #13b38f; border-radius:1rem; background:linear-gradient(135deg,rgba(15,118,110,.06),rgba(19,179,143,.08)); }
-  .hero-kpi-label { display:block; font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin:0 0 .25rem; color:#12332b; }
-  body { margin:0; font-family: var(--font-body, system-ui); background: var(--color-bg,#f5f5f5); color: var(--color-text,#333333); }
-  .site-header { position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(26,43,76,.12); }
-  .site-header-inner { display:flex; align-items:center; justify-content:space-between; gap:.75rem; min-height:4rem; padding:.75rem clamp(.75rem,3vw,1.5rem); }
-  .site-logo-img,
-  .site-logo-svg { width:clamp(180px,32vw,260px); height:auto; max-height:96px; display:block; }
-  .nav-toggle { display:inline-flex; align-items:center; gap:.5rem; border:1px solid rgba(26,43,76,.2); background:transparent; color:var(--color-text,#1a2b4c); font-size:.9rem; font-weight:600; min-width:44px; min-height:44px; padding:.5rem .9rem; border-radius:999px; cursor:pointer; }
-  .nav-toggle:hover { background:rgba(0,166,166,.08); border-color:rgba(0,166,166,.4); }
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem 1.4rem; font-size:.95rem; font-weight:700; line-height:1.2; border-radius:0.75rem; text-decoration:none; background:linear-gradient(135deg,#1a2b4c,#0f1f3a); color:#ffffff; border:1px solid rgba(26,43,76,.6); box-shadow:0 8px 20px rgba(0,0,0,.12); transition:box-shadow .15s,transform .15s; min-height:44px; }
-  .btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.18); }
-  .btn.btn-ghost { background:transparent; color:var(--color-text,#1a2b4c); box-shadow:none; border:1px solid rgba(26,43,76,.18); }
-  .btn.btn-ghost:hover { background:rgba(0,166,166,.08); border-color:rgba(0,166,166,.35); }
-  .hero-title { font-family: var(--font-heading, 'Montserrat'); font-weight:800; letter-spacing:-.02em; line-height:1.1; font-size:clamp(2.2rem,3.6vw,3.2rem); margin:0 0 1rem; color:#1a2b4c; }
-  .hero-lead { font-size:1.05rem; line-height:1.65; max-width:65ch; margin:0 0 1.25rem; color:var(--color-text-muted,#4a5568); }
-  .hero-actions { display:flex; flex-wrap:wrap; gap:.75rem; }
-  .eyebrow,.hero-eyebrow { display:inline-block; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; margin:0 0 .75rem; color:#00a6a6; padding:.4rem .9rem; background:rgba(0,166,166,.12); border-left:3px solid #1a2b4c; border-radius:.35rem; }
-  .hero-kpis { display:grid; gap:.75rem; margin:1.25rem 0 0; padding:0; list-style:none; }
-  .hero-kpi { padding:.9rem 1rem; border:1px solid rgba(26,43,76,.16); border-left:4px solid #00a6a6; border-radius:1rem; background:linear-gradient(135deg,rgba(26,43,76,.06),rgba(0,166,166,.08)); }
-  .hero-kpi-label { display:block; font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; margin:0 0 .25rem; color:#1a2b4c; }
-  main.site-main { min-height:50vh; }
-  .container { max-width:1140px; margin-inline:auto; padding-inline:clamp(1rem,4vw,2.5rem); }
-  @media (min-width:920px){ .hero-kpis{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));} }
-  @media (prefers-reduced-motion:reduce){ .btn,.nav-toggle{transition:none;} }
-</style>
-<!-- Design tokens always come first -->
+<!-- Styles -->
 <link rel="stylesheet" href="{{ '/assets/styles/tokens.css' | relative_url }}" media="screen">
-
-<!-- Page + theme layers (home.css then theme.css, then every remaining stylesheet to guarantee full coverage) -->
-<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/breadcrumbs.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/gallery.css' | relative_url }}" media="screen">
-<link rel="stylesheet" href="{{ '/assets/css/pattern-showcase.css' | relative_url }}" media="screen">
-
-<!-- Page-Specific Styles -->
+<link rel="stylesheet" href="{{ '/assets/css/ts-theme.css' | relative_url }}" media="screen">
 {% if page.styles %}
-  {% for href in page.styles %}
-    <link rel="stylesheet"
-          href="{{ href | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
-          media="screen">
+  {% for style in page.styles %}
+    <link rel="stylesheet" href="{{ style | relative_url }}" media="screen">
   {% endfor %}
 {% endif %}
-
-<!-- Structured Data / JSON-LD -->
-<!-- Core LocalBusiness schema (single source to avoid duplication). Page-specific schemas can extend via page.schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "@id": "{{ site.url }}/#contractor",
-  "name": "Tillerstead LLC",
-  "description": "{{ meta_description | escape }}",
-  "url": "{{ site.url }}/",
-  "image": "{{ site.default_og_image | absolute_url }}",
-  "telephone": "{{ site.company.phone_link }}",
-  "email": "{{ site.company.email }}",
-  "priceRange": "$$",
-  "areaServed": ["Atlantic County NJ","Ocean County NJ","Cape May County NJ"],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "{{ site.company.address_line }}",
-    "addressLocality": "{{ site.company.address_locality }}",
-    "addressRegion": "{{ site.company.address_region }}",
-    "postalCode": "{{ site.company.address_postal_code }}",
-    "addressCountry": "US"
-  }
-}
-</script>
-
-<!-- Page-Specific Structured Data -->
-{% if page.schema %}
-  {% for schema in page.schema %}
-    <script type="application/ld+json">
-      {{ schema | jsonify }}
-    </script>
-  {% endfor %}
-{% endif %}
-
-<!-- Accessibility & User Experience Enhancements -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Tillerstead">
-
-<!-- Preload for improved performance on first visit -->
-<link rel="preload" as="image" href="{{ '/assets/img/logo/tillerstead-logo-header.svg' | relative_url }}">

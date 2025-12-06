@@ -7,7 +7,6 @@
 {% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
 {% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
 {% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View recent work' %}
-{% assign hero_badge_class = include.badge_class | default: page.hero_badge_class | default: 'bg-accent text-surface' %}
 
 {% assign primary_href = hero_primary_url %}
 {% unless primary_href contains '://' or primary_href contains 'mailto:' or primary_href contains 'tel:' or primary_href | slice: 0, 1 == '#' %}
@@ -19,50 +18,40 @@
   {% assign secondary_href = secondary_href | relative_url %}
 {% endunless %}
 
-<header class="hero hero--center bg-surface-elevated shadow-lift unified-hero" aria-label="Page hero">
-  <div class="container hero__content hero__content--center p-6" style="max-width: 760px;">
-    {% if hero_badge %}
-      <div class="hero__cred-bar mb-4">
-        <span class="eyebrow hero__cred-badge rounded-pill {{ hero_badge_class }} px-3 py-1" style="font-size: 0.95rem; letter-spacing: 0.05em;">
-          {{ hero_badge }}
-        </span>
-      </div>
-    {% endif %}
-
-    {% if hero_eyebrow %}
-      <p class="ts-eyebrow mb-3">{{ hero_eyebrow }}</p>
-    {% endif %}
-
-    <h1 class="heading-1 text-primary hero__title mb-3" style="line-height: 1.1;">
-      {{ hero_title }}
-    </h1>
-
-    {% if hero_summary %}
-      <p class="lead text-muted hero__lead mb-5" style="max-width: 650px;">
-        {{ hero_summary }}
-      </p>
-    {% endif %}
-
-    {% if hero_kpis %}
-      <section class="hero__stats-panel mb-6" aria-label="Key points">
-        <ul class="hero__stats-list" style="list-style: none; padding: 0; margin: 0;">
-          {% for metric in hero_kpis %}
-            <li class="mb-2">
-              {% if metric.label %}<strong class="text-accent">{{ metric.label }}:</strong>{% endif %}
-              {% if metric.text %} {{ metric.text }}{% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-    {% endif %}
-
-    <nav class="hero__actions hero__actions--center flex gap-4" aria-label="Primary actions">
-      {% if hero_primary_url %}
-        <a class="btn btn--primary rounded-lg px-5 py-2" href="{{ primary_href }}">{{ hero_primary_label }}</a>
+<header class="hero" aria-label="Page hero">
+  <div class="container hero__content">
+    <div class="hero-home__body">
+      {% if hero_badge %}
+        <div class="hero__cred-bar">
+          <span class="hero__cred-badge">{{ hero_badge }}</span>
+        </div>
       {% endif %}
-      {% if hero_secondary_url %}
-        <a class="btn btn--ghost rounded-lg px-5 py-2" href="{{ secondary_href }}">{{ hero_secondary_label }}</a>
+
+      {% if hero_eyebrow %}<p class="ts-eyebrow mb-3">{{ hero_eyebrow }}</p>{% endif %}
+
+      <h1 class="hero__title">{{ hero_title }}</h1>
+
+      {% if hero_summary %}
+        <p class="hero__lead">{{ hero_summary }}</p>
       {% endif %}
-    </nav>
+
+      {% if hero_kpis %}
+        <section class="hero__stats-panel" aria-label="Key points">
+          <ul class="hero__stats-list">
+            {% for metric in hero_kpis %}
+              <li>
+                {% if metric.label %}<strong class="text-accent">{{ metric.label }}:</strong>{% endif %}
+                {% if metric.text %} {{ metric.text }}{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+      <nav class="hero__actions" aria-label="Primary actions">
+        {% if hero_primary_url %}<a class="btn btn--primary" href="{{ primary_href }}">{{ hero_primary_label }}</a>{% endif %}
+        {% if hero_secondary_url %}<a class="btn btn--ghost" href="{{ secondary_href }}">{{ hero_secondary_label }}</a>{% endif %}
+      </nav>
+    </div>
   </div>
 </header>

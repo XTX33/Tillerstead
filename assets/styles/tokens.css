@@ -1,21 +1,22 @@
 /* ============================================
-   Tillerstead Design Tokens (Modern Refresh)
+   Tillerstead Design Tokens (Dark Navy Theme)
+   Single source of truth for all visual properties
    ============================================ */
 
 :root {
   /* ===========================
      Color Tokens
      =========================== */
-  --color-bg: #0b1421;                 /* Deep navy canvas */
-  --color-surface: #101e32;            /* Primary surface */
-  --color-surface-elevated: #14263d;   /* Elevated panels/cards */
-  --color-surface-muted: #0f1a2c;      /* Section wash */
-  --color-surface-highlight: #1b304a;  /* Soft highlight */
+  --color-bg: #0b1421;
+  --color-surface: #101c2e;
+  --color-surface-elevated: #14263d;
+  --color-surface-muted: #0f1a2c;
+  --color-surface-highlight: #1b304a;
 
-  --color-primary: #1cb394;            /* Emerald for trust and stability */
-  --color-primary-strong: #16967c;     /* Darker emerald for hover/active */
-  --color-primary-soft: rgba(28, 179, 148, 0.18);
-  --color-accent: #c9a24a;             /* Brass accent */
+  --color-primary: #1cb394;
+  --color-primary-strong: #16967c;
+  --color-primary-soft: rgba(28, 179, 148, 0.16);
+  --color-accent: #c9a24a;
   --color-accent-strong: #b3862d;
   --color-accent-soft: rgba(201, 162, 74, 0.18);
 
@@ -24,27 +25,21 @@
   --color-text-muted: #b5c6d8;
   --color-text-subtle: #90a4ba;
 
-  /* Border Colors */
-  --color-border: rgba(129, 159, 189, 0.28);
+  --color-border: rgba(129, 159, 189, 0.3);
   --color-border-strong: rgba(129, 159, 189, 0.45);
-  --color-divider: rgba(129, 159, 189, 0.3);
+  --color-divider: rgba(129, 159, 189, 0.28);
 
-  /* Gradients */
+  /* Gradients & textures */
   --gradient-primary: linear-gradient(135deg, #1cb394 0%, #16967c 100%);
   --gradient-accent: linear-gradient(135deg, #c9a24a 0%, #1cb394 100%);
   --gradient-surface: radial-gradient(circle at 18% 22%, rgba(201, 162, 74, 0.08), transparent 36%),
                       radial-gradient(circle at 82% 8%, rgba(28, 179, 148, 0.1), transparent 40%),
                       #0b1421;
   --gradient-section: linear-gradient(180deg, #101e32 0%, #0f1a2c 55%, #101e32 100%);
-
-  /* Background Pattern Assets */
   --bg-pattern: radial-gradient(circle at 25% 20%, rgba(201, 162, 74, 0.08) 0, rgba(201, 162, 74, 0.08) 8px, transparent 12px),
                 radial-gradient(circle at 70% 10%, rgba(28, 179, 148, 0.08) 0, rgba(28, 179, 148, 0.08) 10px, transparent 16px);
   --bg-pattern-size: 220px 220px;
-  --bg-pattern-opacity: 0.18;
-  --hero-texture: url("/assets/img/bathroom-remodel-final.webp");
-  --hero-texture-size: cover;
-  --hero-texture-opacity: 0.12;
+  --bg-pattern-opacity: 0.16;
 
   /* ===========================
      Typography Tokens
@@ -54,92 +49,91 @@
   --font-sans: var(--font-body);
   --font-mono: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-  /* Font Sizes */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.78rem;
+  --font-size-sm: 0.9rem;
   --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-  --font-size-4xl: 2.5rem;
-  --font-size-5xl: 3rem;
+  --font-size-lg: 1.15rem;
+  --font-size-xl: 1.35rem;
+  --font-size-2xl: 1.65rem;
+  --font-size-3xl: 2.2rem;
+  --font-size-4xl: 2.75rem;
+  --font-size-5xl: 3.25rem;
 
-  /* Line Heights */
-  --line-height-base: 1.6;
+  --heading-1: clamp(2.45rem, 4vw, 3.6rem);
+  --heading-2: clamp(2rem, 3vw, 2.9rem);
+  --heading-3: clamp(1.45rem, 2.2vw, 2rem);
+  --heading-4: clamp(1.2rem, 1.7vw, 1.45rem);
+  --line-height-base: 1.65;
   --line-height-tight: 1.2;
-  --line-height-relaxed: 1.75;
-
-  /* Heading Sizes */
-  --heading-1: clamp(2.4rem, 4vw, 3.4rem);
-  --heading-2: clamp(2rem, 3vw, 2.75rem);
-  --heading-3: clamp(1.6rem, 2.5vw, 2.1rem);
-  --heading-4: clamp(1.25rem, 2vw, 1.6rem);
+  --line-height-relaxed: 1.85;
 
   /* ===========================
      Spacing Scale (8px baseline)
      =========================== */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
+  --space-1: 0.35rem;
+  --space-2: 0.6rem;
+  --space-3: 0.9rem;
+  --space-4: 1.25rem;
+  --space-5: 1.75rem;
+  --space-6: 2.25rem;
   --space-7: 3rem;
   --space-8: 4rem;
-  --space-10: 4.5rem;
-  --space-12: 5.5rem;
+  --space-10: 4.75rem;
+  --space-12: 5.75rem;
 
   /* ===========================
-     Border Radius
+     Radius & Shadow
      =========================== */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 1.75rem;
+  --radius-sm: 0.65rem;
+  --radius-md: 0.95rem;
+  --radius-lg: 1.35rem;
+  --radius-xl: 1.9rem;
   --radius-pill: 999px;
+  --radius-card: var(--radius-lg);
 
-  /* ===========================
-     Shadows
-     =========================== */
-  --shadow-soft: 0 16px 38px rgba(0, 0, 0, 0.18);
-  --shadow-lift: 0 20px 48px rgba(0, 0, 0, 0.22);
-  --shadow-sharp: 0 24px 64px rgba(0, 0, 0, 0.28);
-  --shadow-button: 0 10px 26px rgba(28, 179, 148, 0.26);
-  --shadow-button-hover: 0 12px 32px rgba(28, 179, 148, 0.32);
-  --shadow-glow: 0 0 0 6px rgba(28, 179, 148, 0.24);
-
-  /* ===========================
-     Transitions & Focus
-     =========================== */
-  --transition-fast: 150ms ease;
-  --transition-med: 220ms ease;
-  --transition-slow: 350ms ease;
+  --shadow-soft: 0 16px 32px rgba(3, 10, 22, 0.35);
+  --shadow-lift: 0 22px 44px rgba(3, 10, 22, 0.4);
+  --shadow-glow: 0 0 0 4px rgba(28, 179, 148, 0.25);
+  --shadow-glow-accent: 0 0 0 4px rgba(201, 162, 74, 0.26);
   --focus-ring: 0 0 0 3px rgba(28, 179, 148, 0.55);
+  --transition-fast: 160ms ease;
+  --transition-med: 240ms ease;
 
-  /* Layout */
-  --shell-width: 1140px;
+  /* ===========================
+     Layout
+     =========================== */
+  --shell-width: 1180px;
   --section-padding-y: clamp(var(--space-7), 6vw, var(--space-12));
-  --section-gap: clamp(1.5rem, 3vw, 2.5rem);
+  --section-gap: clamp(1.4rem, 2.6vw, 2.6rem);
+  --header-height: 76px;
+  --grid-gap: clamp(1rem, 3vw, 1.6rem);
 
-  /* Component aliases */
-  --header-bg: rgba(16, 30, 50, 0.94);
-  --header-border: rgba(129, 159, 189, 0.28);
-  --nav-bg: var(--color-surface);
-  --nav-border: rgba(129, 159, 189, 0.32);
+  /* Legacy token aliases (ts- prefix) */
+  --ts-color-bg: var(--color-bg);
+  --ts-color-surface: var(--color-surface);
+  --ts-color-surface-elevated: var(--color-surface-elevated);
+  --ts-color-surface-muted: var(--color-surface-muted);
+  --ts-color-primary: var(--color-primary);
+  --ts-color-primary-soft: var(--color-primary-soft);
+  --ts-color-accent: var(--color-accent);
+  --ts-color-text: var(--color-text);
+  --ts-color-text-muted: var(--color-text-muted);
+  --ts-color-border: var(--color-border);
+  --ts-radius-card: var(--radius-card);
+  --ts-radius-pill: var(--radius-pill);
+  --ts-shadow-soft: var(--shadow-soft);
+  --ts-shadow-lift: var(--shadow-lift);
+  --ts-shadow-glow: var(--shadow-glow);
 }
 
-/* Light mode */
 html.light {
   color-scheme: dark;
   --color-bg: #0d1828;
   --color-surface: #122238;
   --color-surface-elevated: #16304a;
   --color-surface-muted: #121f35;
-  --color-surface-highlight: #1c3550;
   --color-heading: #eaf2ff;
   --color-text: #d8e4f3;
   --color-text-muted: #b9cadc;
-  --color-text-subtle: #98abc0;
   --color-border: rgba(144, 172, 202, 0.32);
 }
