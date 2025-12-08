@@ -28,9 +28,6 @@
   const isMobileView = () => window.innerWidth < BP_DESKTOP;
 
   const syncAria = (open) => {
-    if (nav) {
-      nav.setAttribute("aria-hidden", String(!open));
-    }
     if (navToggle) {
       navToggle.setAttribute("aria-expanded", String(open));
       navToggle.setAttribute(
