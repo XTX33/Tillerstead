@@ -1,52 +1,122 @@
 /* ============================================
-   Header & Navigation Components
-   Professional tile & stone company header
+   Header & Navigation
+   Tillerstead – clean, stable, mobile-first
    ============================================ */
 
-/* Site Header */
+/* -----------------------------
+   Site Header Shell
+   ----------------------------- */
+
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 900;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+  z-index: 1000;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.96) 100%
+  );
   border-bottom: 1px solid var(--header-border);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: all var(--transition-med);
-  
-  &.scrolled {
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.97) 100%);
-  }
+  transition: box-shadow var(--transition-med), background var(--transition-med);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.99) 0%,
+    rgba(255, 255, 255, 0.98) 100%
+  );
 }
 
 .site-header-inner {
+  max-width: var(--shell-width);
+  margin: 0 auto;
+  padding: clamp(0.7rem, 2.4vw, 0.95rem) clamp(1rem, 4vw, 2rem);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--ts-spacing-lg);
-  padding: clamp(0.875rem, 2.5vw, 1.25rem) clamp(1rem, 4vw, 2rem);
-  max-width: var(--shell-width);
-  margin: 0 auto;
+  gap: var(--ts-spacing-md);
 }
 
-/* Professional Brand with Metadata */
+/* -----------------------------
+   Brand / Logo
+   ----------------------------- */
+
 .site-brand,
 .ts-brand {
   display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
+  gap: clamp(0.75rem, 2vw, 1.1rem);
   flex-shrink: 0;
-  min-width: 0; /* Allow shrinking */
+  min-width: 0;
 }
 
+.site-logo,
+.ts-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: var(--ts-radius-sm);
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast), outline-color var(--transition-fast);
+
+  &:hover {
+    opacity: 0.96;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline-color: var(--ts-color-primary);
+  }
+}
+
+.ts-logo {
+  display: block;
+  width: clamp(150px, 30vw, 220px);
+  max-height: 52px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+  transition: filter var(--transition-fast), transform var(--transition-fast);
+
+  &--header {
+    width: clamp(150px, 28vw, 220px);
+    max-height: 50px;
+  }
+
+  &--footer {
+    width: clamp(160px, 32vw, 240px);
+    max-height: 56px;
+    opacity: 0.95;
+  }
+}
+
+.ts-logo-link:hover .ts-logo {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.site-logo-img {
+  display: block;
+  width: 100%;
+  max-width: clamp(150px, 30vw, 220px);
+  max-height: 52px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Optional tagline/license beside logo on desktop */
 .brand-meta {
   display: none;
   flex-direction: column;
   gap: 0.125rem;
   min-width: 0;
-  
+
   @media (min-width: 900px) {
     display: flex;
   }
@@ -70,210 +140,14 @@
   white-space: nowrap;
 }
 
-.site-logo,
-.ts-logo-link {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  transition: all var(--transition-fast);
-  border-radius: var(--ts-radius-sm);
-  outline: 2px solid transparent;
-  outline-offset: 4px;
-  flex-shrink: 1;
-  min-width: 0;
-  
-  &:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-  }
-  
-  &:focus-visible {
-    outline-color: var(--ts-color-primary);
-  }
-}
+/* -----------------------------
+   Header Actions (Call + Toggle)
+   ----------------------------- */
 
-.ts-logo {
-  display: block;
-  height: auto;
-  width: clamp(140px, 24vw, 220px);
-  max-height: 52px;
-  object-fit: contain;
-  transition: all var(--transition-fast);
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
-  
-  @media (min-width: 480px) {
-    width: clamp(160px, 26vw, 240px);
-    max-height: 56px;
-  }
-  
-  @media (min-width: 768px) {
-    width: clamp(180px, 28vw, 260px);
-    max-height: 60px;
-  }
-  
-  &--header {
-    width: clamp(140px, 24vw, 220px);
-    max-height: 48px;
-    
-    @media (min-width: 480px) {
-      width: clamp(160px, 26vw, 240px);
-      max-height: 52px;
-    }
-    
-    @media (min-width: 768px) {
-      width: clamp(180px, 28vw, 260px);
-      max-height: 56px;
-    }
-  }
-  
-  &--footer {
-    width: clamp(160px, 32vw, 240px);
-    max-height: 56px;
-    opacity: 0.95;
-  }
-}
-
-.ts-logo-link:hover .ts-logo {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-}
-
-.site-logo-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: clamp(140px, 28vw, 260px);
-  max-height: 56px;
-  object-fit: contain;
-}
-
-/* Navigation Container */
-.site-nav-shell {
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  z-index: 900;
-  
-  /* Hide backdrop on desktop */
-  @media (min-width: 921px) {
-    .site-nav-backdrop {
-      display: none !important;
-    }
-  }
-}
-
-/* Navigation */
-.site-nav {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  
-  /* Ensure nav is visible on desktop */
-  @media (min-width: 921px) {
-    position: static;
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-}
-
-/* Hide drawer header on desktop */
-.site-nav-drawer-header {
-  @media (min-width: 921px) {
-    display: none !important;
-  }
-}
-
-/* Hide mobile-only nav items on desktop */
-.nav-cta--drawer,
-.nav-item--phone {
-  @media (min-width: 921px) {
-    display: none !important;
-  }
-}
-
-.site-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  
-  li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  a,
-  .nav-link {
-    display: block;
-    padding: 0.75rem 1.25rem;
-    color: var(--ts-color-text);
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    border-radius: var(--ts-radius-md);
-    transition: all var(--transition-fast);
-    position: relative;
-    
-    @media (min-width: 1024px) {
-      font-size: 0.9375rem;
-      padding: 0.625rem 1rem;
-    }
-    
-    &:hover {
-      color: var(--ts-color-primary);
-      background: linear-gradient(135deg, var(--ts-color-primary-soft) 0%, rgba(var(--ts-color-primary-rgb), 0.08) 100%);
-      transform: translateX(4px);
-      
-      @media (min-width: 1024px) {
-        transform: translateY(-2px);
-      }
-    }
-    
-    &:focus-visible {
-      outline: 2px solid var(--ts-color-primary);
-      outline-offset: 4px;
-      background: var(--ts-color-primary-soft);
-    }
-    
-    &[aria-current="page"],
-    &.active {
-      color: var(--ts-color-primary);
-      background: linear-gradient(135deg, var(--ts-color-primary-soft) 0%, rgba(var(--ts-color-primary-rgb), 0.12) 100%);
-      font-weight: 700;
-      
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 4px;
-        height: 60%;
-        background: linear-gradient(180deg, var(--ts-color-primary) 0%, var(--ts-color-accent) 100%);
-        border-radius: 0 2px 2px 0;
-        
-        @media (min-width: 1024px) {
-          left: 50%;
-          top: auto;
-          bottom: 0;
-          transform: translateX(-50%);
-          width: 60%;
-          height: 3px;
-          border-radius: 2px 2px 0 0;
-        }
-      }
-    }
-  }
-}
-
-/* Header Actions */
 .site-header-actions {
   display: flex;
   align-items: center;
-  gap: var(--ts-spacing-sm);
+  gap: var(--ts-spacing-xs);
   flex-shrink: 0;
 }
 
@@ -284,12 +158,111 @@
   white-space: nowrap;
 }
 
-/* Mobile Navigation Toggle */
+/* -----------------------------
+   Nav Shell (desktop baseline)
+   ----------------------------- */
+
+.site-nav-shell {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1001;
+}
+
+.site-nav-backdrop {
+  display: none;
+}
+
+/* Desktop nav: inline */
+.site-nav {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Drawer header only for mobile */
+.site-nav-drawer-header {
+  display: none;
+}
+
+/* Menu list */
+.site-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a,
+  .nav-link {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: var(--ts-color-text);
+    font-weight: 600;
+    font-size: 0.94rem;
+    text-decoration: none;
+    border-radius: var(--ts-radius-md);
+    position: relative;
+    transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+
+    &:hover {
+      color: var(--ts-color-primary);
+      background: var(--ts-color-primary-soft);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ts-color-primary);
+      outline-offset: 4px;
+      background: var(--ts-color-primary-soft);
+    }
+
+    &[aria-current='page'],
+    &.active {
+      color: var(--ts-color-primary);
+      background: linear-gradient(
+        135deg,
+        var(--ts-color-primary-soft) 0%,
+        rgba(var(--ts-color-primary-rgb), 0.16) 100%
+      );
+      font-weight: 700;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 3px;
+        border-radius: 2px 2px 0 0;
+        background: linear-gradient(
+          90deg,
+          var(--ts-color-primary) 0%,
+          var(--ts-color-accent) 100%
+        );
+      }
+    }
+  }
+}
+
+/* -----------------------------
+   Mobile toggle button
+   ----------------------------- */
+
 .nav-toggle {
   display: none;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.875rem;
+  padding: 0.5rem 0.9rem;
   background: transparent;
   border: 1px solid var(--ts-color-border);
   border-radius: var(--ts-radius-sm);
@@ -297,21 +270,21 @@
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: var(--transition-fast);
-  
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+
   &:hover,
   &:focus-visible {
     background: var(--ts-color-primary-soft);
     border-color: var(--ts-color-primary);
     color: var(--ts-color-primary);
   }
-  
+
   &:focus-visible {
     outline: var(--focus-ring);
     outline-offset: 2px;
   }
-  
-  &[aria-expanded="true"] {
+
+  &[aria-expanded='true'] {
     background: var(--ts-color-primary-soft);
     border-color: var(--ts-color-primary);
     color: var(--ts-color-primary);
@@ -324,7 +297,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   svg {
     width: 100%;
     height: 100%;
@@ -336,50 +309,53 @@
   font-weight: 600;
 }
 
-/* Mobile Navigation Styles */
+/* -----------------------------
+   Mobile drawer styles
+   ----------------------------- */
+
 @media (max-width: 920px) {
+  /* Layout: brand on left, actions on right, no inline nav */
+  .site-header-inner {
+    padding: 0.75rem clamp(1rem, 4vw, 1.5rem);
+    gap: var(--ts-spacing-sm);
+  }
+
   .site-nav-shell {
     position: fixed;
     inset: 0;
     justify-content: flex-end;
     pointer-events: none;
-    isolation: isolate; /* Create stacking context */
-    
-    &.is-open {
-      pointer-events: auto;
-    }
+    isolation: isolate;
   }
-  
-  /* Mobile Backdrop */
+
+  .site-nav-shell.is-open {
+    pointer-events: auto;
+  }
+
+  /* Backdrop */
   .site-nav-backdrop {
     display: block;
     position: fixed;
     inset: 0;
-    background: linear-gradient(145deg, 
-                rgba(9, 14, 22, 0.8), 
-                rgba(9, 14, 22, 0.6));
-    /* Fallback for browsers without backdrop-filter */
-    background-color: rgba(9, 14, 22, 0.75);
+    background: rgba(9, 14, 22, 0.75);
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-med);
-    z-index: 950;
-    
-    /* Progressive enhancement for modern browsers */
+    z-index: 1100;
+
     @supports (backdrop-filter: blur(4px)) {
       backdrop-filter: blur(4px) saturate(140%);
       -webkit-backdrop-filter: blur(4px) saturate(140%);
     }
   }
-  
+
   .site-nav-shell.is-open .site-nav-backdrop {
     opacity: 1;
     pointer-events: auto;
   }
-  
-  /* Mobile Navigation Drawer - Professional Tile & Stone Style */
+
+  /* Drawer */
   .site-nav {
-    flex-direction: column;
     position: fixed;
     top: 0;
     right: 0;
@@ -388,221 +364,173 @@
     max-width: 100%;
     background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
     padding: clamp(1.5rem, 6vw, 2.5rem);
-    box-shadow: -24px 0 64px rgba(0, 0, 0, 0.15), -8px 0 24px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      -24px 0 64px rgba(0, 0, 0, 0.15),
+      -8px 0 24px rgba(0, 0, 0, 0.1);
     border-left: 2px solid var(--ts-color-border);
     transform: translateX(110%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 380ms cubic-bezier(0.4, 0, 0.2, 1), opacity 280ms ease;
-    z-index: 960;
+    transition:
+      transform 380ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 280ms ease;
+    z-index: 1200;
     overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior: contain; /* Prevent scroll chaining */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    will-change: transform, opacity; /* Performance optimization */
-    contain: layout style paint; /* CSS containment for performance */
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--ts-color-primary) 0%, var(--ts-color-accent) 100%);
-    }
+    -webkit-overflow-scrolling: touch;
   }
-  
+
   .site-nav-shell.is-open .site-nav {
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
   }
-  
-  /* Mobile Menu Items - Enhanced Tile & Stone Aesthetic */
+
+  /* Drawer header */
+  .site-nav-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--ts-spacing-md);
+    margin-bottom: var(--ts-spacing-md);
+    border-bottom: 2px solid var(--ts-color-border);
+  }
+
+  .nav-drawer-label {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ts-color-text);
+  }
+
+  .nav-close {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.75rem;
+    background: transparent;
+    border: 1px solid var(--ts-color-border);
+    border-radius: var(--ts-radius-md);
+    color: var(--ts-color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+
+    &:hover {
+      background: var(--ts-color-surface-elevated);
+      border-color: var(--ts-color-primary);
+      color: var(--ts-color-primary);
+      transform: translateX(-3px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ts-color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  .nav-close-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Drawer menu */
   .site-menu {
     flex-direction: column;
     width: 100%;
     gap: 0.5rem;
     margin-top: var(--ts-spacing-md);
-    
+
     a {
       width: 100%;
       padding: 0.875rem 1rem;
-      font-size: 1.05rem;
-      
-      &[aria-current="page"]::after {
+      font-size: 1.02rem;
+
+      &::after {
+        /* remove desktop underline bar in drawer */
         display: none;
       }
     }
   }
-  
-  /* Show CTA buttons in mobile drawer */
+
+  /* Show phone/CTA buttons inside drawer when needed */
   .nav-cta,
   .nav-item--phone {
     display: block !important;
     margin-top: var(--ts-spacing-sm);
-    
+
     a {
       width: 100%;
       justify-content: center;
       text-align: center;
     }
   }
-  
+
   .nav-cta--drawer {
     margin-top: var(--ts-spacing-md);
     padding-top: var(--ts-spacing-md);
     border-top: 1px solid var(--ts-color-border);
   }
-  
+
+  /* Toggle / actions */
   .nav-toggle {
-    display: flex;
+    display: inline-flex;
   }
-  
+
   .header-cta {
+    /* if you want call button hidden in header on mobile, keep this */
     display: none;
   }
-  
-  .site-header-inner {
-    padding: 0.75rem clamp(1rem, 4vw, 1.5rem);
-  }
 }
 
-/* Mobile Navigation Drawer Header */
-.site-nav-drawer-header {
-  display: none; /* Hidden on desktop, shown on mobile via media query */
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: var(--ts-spacing-md);
-  margin-bottom: var(--ts-spacing-md);
-  border-bottom: 2px solid var(--ts-color-border);
-  
-  @media (max-width: 920px) {
-    display: flex;
-  }
-}
-
-.nav-drawer-label {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--ts-color-text);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0;
-}
-
-.nav-close {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  background: transparent;
-  border: 1px solid var(--ts-color-border);
-  border-radius: var(--ts-radius-md);
-  color: var(--ts-color-text-muted);
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  
-  &:hover {
-    background: var(--ts-color-surface-elevated);
-    border-color: var(--ts-color-primary);
-    color: var(--ts-color-primary);
-    transform: translateX(-4px);
-  }
-  
-  &:focus-visible {
-    outline: 2px solid var(--ts-color-primary);
-    outline-offset: 2px;
-  }
-}
-
-.nav-close-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-}
-
+/* Tiny screens: tighten everything */
 @media (max-width: 640px) {
   .site-logo-img,
   .ts-logo {
-    width: clamp(140px, 45vw, 180px);
+    width: clamp(135px, 45vw, 180px);
     max-height: 48px;
   }
-  
+
   .nav-toggle-label {
     display: none;
   }
-  
-  /* Adjust nav drawer for smaller screens */
+
   .site-nav {
     width: min(92vw, 320px);
     padding: clamp(1rem, 5vw, 1.5rem);
   }
-  
+
   .site-menu a {
     padding: 0.75rem 0.875rem;
     font-size: 1rem;
   }
 }
 
-/* Tablet landscape improvements */
-@media (min-width: 641px) and (max-width: 920px) {
-  .brand-meta {
-    display: none;
-  }
-  
-  .site-header-inner {
-    padding: 0.875rem clamp(1.25rem, 4vw, 2rem);
-  }
-}
-
-/* Very small devices (e.g., iPhone SE) */
+/* iPhone SE-ish */
 @media (max-width: 375px) {
+  .site-header-inner {
+    padding: 0.6rem 1rem;
+    gap: 0.5rem;
+  }
+
   .site-logo-img,
   .ts-logo {
     width: clamp(120px, 40vw, 160px);
     max-height: 44px;
   }
-  
-  .site-nav {
-    width: 95vw;
-    padding: 1rem;
-  }
-  
-  .site-header-inner {
-    padding: 0.625rem 1rem;
-    gap: 0.5rem;
-  }
-  
-  .call-btn .call-btn-display {
-    display: none;
-  }
-  
-  .header-cta {
-    font-size: 0.8125rem;
-    padding: 0.5rem 0.75rem;
-  }
 }
 
-/* Sticky Header Behavior */
-@supports (backdrop-filter: blur(12px)) {
-  .site-header {
-    background: var(--header-bg);
-  }
-}
-
-/* Prevent body scroll when mobile nav is open */
+/* Accessibility & motion */
 body.nav-open {
   overflow: hidden;
   touch-action: none;
 }
 
-/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .site-nav,
   .site-nav-backdrop,
@@ -612,7 +540,7 @@ body.nav-open {
     transition: none !important;
     animation: none !important;
   }
-  
+
   .site-menu a:hover {
     transform: none !important;
   }
