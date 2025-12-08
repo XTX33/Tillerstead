@@ -5,7 +5,7 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1200;
+  z-index: 900;
 
   background: var(--header-bg);
   border-bottom: 1px solid var(--header-border);
@@ -38,11 +38,12 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  z-index: 900;
 
   @media (max-width: 920px) {
     position: fixed;
     inset: 0;
-    z-index: 1600;
+    z-index: 900;
     justify-content: flex-end;
     pointer-events: none;
 
@@ -65,7 +66,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-med);
-    z-index: 1500;
+    z-index: 950;
 
     .site-nav-shell.is-open & {
       opacity: 1;
@@ -147,7 +148,7 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 320ms ease, opacity 220ms ease;
-    z-index: 1600;
+    z-index: 960;
 
     .site-nav-shell.is-open & {
       transform: translateX(0);
@@ -405,4 +406,5 @@
 
 body.nav-open {
   overflow: hidden;
+  touch-action: none;
 }
