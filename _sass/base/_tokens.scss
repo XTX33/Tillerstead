@@ -126,6 +126,18 @@
   --header-height: 76px;
   --grid-gap: clamp(1rem, 3vw, 1.6rem);
 
+  /* ===========================
+     Header & Footer Colors
+     =========================== */
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-border: rgba(15, 106, 100, 0.15);
+  --footer-bg: #0c1520;
+  --footer-text: #e6efff;
+  --footer-text-muted: #b8c9dd;
+  --footer-link: #8fe29e;
+  --footer-link-hover: #bdfcc8;
+  --footer-border: rgba(230, 239, 255, 0.12);
+
   /* Legacy aliases to keep existing selectors functional */
   --color-bg: var(--ts-color-bg);
   --color-surface: var(--ts-color-surface);
@@ -199,4 +211,8 @@ html[data-theme="dark"] {
   --ts-shadow-glow: 0 0 0 3px rgba(23, 163, 155, 0.38);
   --ts-shadow-glow-accent: 0 0 0 3px rgba(200, 160, 70, 0.34);
   --focus-ring: 0 0 0 3px rgba(200, 160, 70, 0.55);
+
+  /* Header & Footer (dark theme) */
+  --header-bg: rgba(15, 26, 44, 0.95);
+  --header-border: rgba(23, 163, 155, 0.25);
 }
