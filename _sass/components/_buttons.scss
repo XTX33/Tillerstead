@@ -80,13 +80,13 @@
 .btn--accent {
   background: var(--ts-gradient-accent);
   color: var(--ts-navy);
-  box-shadow: 0 18px 38px rgba(212, 175, 55, 0.30);
+  box-shadow: 0 18px 38px rgba(15, 106, 100, 0.25);
   border: none;
   
   &:hover,
   &:focus-visible {
     transform: translateY(-2px);
-    box-shadow: 0 24px 48px rgba(212, 175, 55, 0.38);
+    box-shadow: 0 24px 48px rgba(15, 106, 100, 0.32);
     text-decoration: none;
     color: var(--ts-navy);
   }
