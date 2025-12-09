@@ -25,8 +25,8 @@ body {
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base, 1.65);
-  color: var(--color-text);
-  background: var(--color-bg);
+  color: var(--ts-color-text);
+  background: var(--ts-color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -38,7 +38,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.6rem;
-  color: var(--color-heading);
+  color: var(--ts-color-heading);
   font-weight: 600;
   line-height: 1.2;
 }
@@ -52,7 +52,7 @@ h6 { font-size: var(--heading-6); }
 
 p {
   margin: 0 0 1rem;
-  color: var(--color-text);
+  color: var(--ts-color-text);
 }
 
 img,
@@ -63,13 +63,13 @@ picture {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--ts-color-primary);
   text-decoration: none;
   transition: var(--transition-fast);
 
   &:hover,
   &:focus-visible {
-    color: var(--color-primary-strong);
+    color: var(--ts-color-primary-strong);
     text-decoration: underline;
   }
 
@@ -83,7 +83,7 @@ ul,
 ol {
   margin: 0 0 1rem 1.15rem;
   padding-left: 1.15rem;
-  color: var(--color-text-muted);
+  color: var(--ts-color-muted);
 }
 
 // ============================================
@@ -136,8 +136,8 @@ ol {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--color-primary);
-  color: var(--color-bg);
+  background: var(--ts-color-primary);
+  color: var(--ts-color-bg);
   padding: 0.5rem 1rem;
   text-decoration: none;
   z-index: 9999;
@@ -176,14 +176,14 @@ ol {
 .btn-primary,
 .btn--primary,
 .call-btn {
-  background: var(--gradient-primary);
-  color: var(--color-bg);
-  box-shadow: var(--shadow-soft);
+  background: var(--ts-gradient-primary);
+  color: var(--ts-color-bg);
+  box-shadow: var(--ts-shadow-soft);
 
   &:hover,
   &:focus-visible {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lift);
+    box-shadow: var(--ts-shadow-lift);
     text-decoration: none;
   }
 
@@ -193,14 +193,14 @@ ol {
 }
 
 .btn-secondary {
-  background: var(--color-surface-elevated);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
+  background: var(--ts-color-surface-elevated);
+  color: var(--ts-color-text);
+  border: 1px solid var(--ts-color-border);
 
   &:hover,
   &:focus-visible {
-    background: var(--color-surface-highlight);
-    border-color: var(--color-border-strong);
+    background: var(--ts-color-surface-highlight);
+    border-color: var(--ts-color-border-strong);
     text-decoration: none;
   }
 }
@@ -208,28 +208,28 @@ ol {
 .btn-ghost,
 .btn--ghost {
   background: transparent;
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
+  color: var(--ts-color-text);
+  border: 1px solid var(--ts-color-border);
 
   &:hover,
   &:focus-visible {
-    background: var(--color-surface);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    background: var(--ts-color-surface);
+    border-color: var(--ts-color-primary);
+    color: var(--ts-color-primary);
     text-decoration: none;
   }
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--ts-gold-soft) 100%);
+  background: linear-gradient(135deg, var(--ts-color-accent) 0%, var(--ts-gold-soft) 100%);
   color: var(--ts-navy);
-  box-shadow: 0 18px 36px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 18px 36px rgba(15, 106, 100, 0.25);
 
   &:hover,
   &:focus-visible {
     color: var(--ts-navy);
     transform: translateY(-2px);
-    box-shadow: 0 24px 48px rgba(212, 175, 55, 0.42);
+    box-shadow: 0 24px 48px rgba(15, 106, 100, 0.32);
     text-decoration: none;
   }
 }
@@ -252,7 +252,7 @@ ol {
   .btn + .call-btn,
   .call-btn + .call-btn {
     margin-inline-start: 0;
-    margin-block-start: var(--space-2);
+    margin-block-start: var(--ts-spacing-sm);
   }
 }
 
@@ -270,11 +270,11 @@ ol {
 .why-item,
 .who-card,
 .docs-card {
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  background: var(--color-surface-elevated);
+  border-radius: var(--ts-radius-lg);
+  border: 1px solid var(--ts-color-border);
+  background: var(--ts-color-surface-elevated);
   padding: clamp(1.5rem, 3vw, 2.25rem);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--ts-shadow-soft);
   position: relative;
   overflow: hidden;
   transition:
@@ -284,8 +284,8 @@ ol {
 
   &:focus-within {
     outline: none;
-    border-color: var(--color-border-strong);
-    box-shadow: var(--shadow-lift);
+    border-color: var(--ts-color-border-strong);
+    box-shadow: var(--ts-shadow-lift);
   }
 }
 
@@ -300,7 +300,7 @@ ol {
   .process-step:hover,
   .docs-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lift);
+    box-shadow: var(--ts-shadow-lift);
   }
 }
 
@@ -375,20 +375,20 @@ ol {
 
 .hero-surface {
   position: relative;
-  border-radius: var(--radius-xl);
-  background: var(--gradient-surface);
-  box-shadow: var(--shadow-lift);
-  border: 1px solid var(--color-border);
+  border-radius: var(--ts-radius-xl);
+  background: var(--ts-gradient-surface);
+  box-shadow: var(--ts-shadow-lift);
+  border: 1px solid var(--ts-color-border);
   overflow: hidden;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: var(--bg-pattern);
-    background-size: var(--bg-pattern-size);
+    background-image: var(--ts-bg-pattern);
+    background-size: var(--ts-bg-pattern-size);
     background-repeat: repeat;
-    opacity: var(--bg-pattern-opacity, 0.18);
+    opacity: var(--ts-bg-pattern-opacity, 0.18);
     mix-blend-mode: screen;
     pointer-events: none;
   }
@@ -401,7 +401,7 @@ ol {
   padding: clamp(1.5rem, 4vw, 3rem);
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-6);
+  gap: var(--ts-spacing-xl);
   position: relative;
   z-index: 1;
 }
@@ -414,7 +414,7 @@ ol {
   background: #0f2240;
   color: #e6efff;
   padding: var(--section-padding-y) clamp(1.25rem, 4vw, 2.5rem);
-  margin-top: var(--space-8);
+  margin-top: var(--ts-spacing-2xl);
   border-top: 0;
 }
 
@@ -519,14 +519,14 @@ footer address {
 // ============================================
 
 .form-group {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--ts-spacing-lg);
 }
 
 .form-label {
   display: block;
   font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: var(--space-2);
+  color: var(--ts-color-text);
+  margin-bottom: var(--ts-spacing-sm);
   font-size: 0.95rem;
 }
 
@@ -537,25 +537,25 @@ footer address {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-family: var(--font-sans);
-  color: var(--color-text);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  color: var(--ts-color-text);
+  background: var(--ts-color-surface);
+  border: 1px solid var(--ts-color-border);
+  border-radius: var(--ts-radius-sm);
   transition: var(--transition-fast);
 
   &::placeholder {
-    color: var(--color-text-subtle);
+    color: var(--ts-color-muted);
   }
 
   &:hover {
-    border-color: var(--color-border-strong);
+    border-color: var(--ts-color-border-strong);
   }
 
   &:focus {
     outline: var(--focus-ring);
     outline-offset: 0;
-    border-color: var(--color-primary);
-    background: var(--color-surface-elevated);
+    border-color: var(--ts-color-primary);
+    background: var(--ts-color-surface-elevated);
   }
 }
 
@@ -566,14 +566,14 @@ footer address {
 
 .form-help {
   font-size: 0.875rem;
-  color: var(--color-text-subtle);
-  margin-top: var(--space-2);
+  color: var(--ts-color-muted);
+  margin-top: var(--ts-spacing-sm);
 }
 
 .form-error {
   font-size: 0.875rem;
   color: var(--ts-color-error);
-  margin-top: var(--space-2);
+  margin-top: var(--ts-spacing-sm);
 }
 
 // ============================================
@@ -584,11 +584,11 @@ footer address {
 .text-left   { text-align: left !important; }
 .text-right  { text-align: right !important; }
 
-.text-muted   { color: var(--color-text-muted) !important; }
-.text-subtle  { color: var(--color-text-subtle) !important; }
-.text-primary { color: var(--color-primary) !important; }
+.text-muted   { color: var(--ts-color-muted) !important; }
+.text-subtle  { color: var(--ts-color-muted) !important; }
+.text-primary { color: var(--ts-color-primary) !important; }
 
-.mt-4 { margin-top: var(--space-4) !important; }
-.mb-4 { margin-bottom: var(--space-4) !important; }
+.mt-4 { margin-top: var(--ts-spacing-lg) !important; }
+.mb-4 { margin-bottom: var(--ts-spacing-lg) !important; }
 
 // (add more utilities here as you discover you actually use them)
