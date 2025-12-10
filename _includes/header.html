@@ -18,6 +18,9 @@
              decoding="async"
              class="site-logo-img" />
       </a>
+      {% if site.tagline %}
+        <p class="brand-tagline">{{ site.tagline }}</p>
+      {% endif %}
     </div>
 
     <!-- Navigation container -->
