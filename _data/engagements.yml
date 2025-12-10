@@ -1,0 +1,38 @@
+- title: "Owner-Direct Projects"
+  tags:
+    - Homeowners
+    - Landlords & property managers
+  summary: "Fixed-scope tile, remodeling, and property care commissioned directly by the owner with detailed proposals, allowances, and scheduling milestones."
+  bullets:
+    - "Written scopes with waterproofing specs, allowances, and change-order terms."
+    - "Photo documentation and jobsite updates for remote owners."
+    - "Option to fold into monthly maintenance once the project closes out."
+  rate: "Fixed scope · allowances reconciled"
+  cta_label: "See Core Services"
+  cta_url: "/services/"
+
+- title: "Subcontract & Builder Support"
+  tags:
+    - Tile subcontractor
+    - GC partner
+  summary: "Tile packages, finish carpentry, and punch support delivered as a licensed subcontractor with documented readiness checklists and daily coordination."
+  bullets:
+    - "Estimates built from your plans, takeoffs, or site walks."
+    - "Site-ready checklists and daily communication with supers."
+    - "COI, W-9, and punchlists provided with each project closeout."
+  rate: "Per-scope · unit pricing available"
+  cta_label: "Work With Tillerstead"
+  cta_url: "/for-general-contractors/"
+
+- title: "Daily Rate & Task Support"
+  tags:
+    - Daily rate
+    - Facilities & turnover
+  summary: "Hands-on help for turnover lists, inspections, or fast-moving punch items where a steady craftsman on a daily rate keeps the schedule intact."
+  bullets:
+    - "Ideal for quick tile repairs, sealing, fixture swaps, or trim touch-ups."
+    - "Day-start briefing, task log, and material usage summary."
+    - "Available for facility managers, HOAs, and short-term rental operators."
+  rate: "Day rate + materials"
+  cta_label: "Request Day-Rate Availability"
+  cta_url: "/contact/"

@@ -1,0 +1,42 @@
+{% assign cards = site.data.engagements | default: empty %}
+<section class="ts-engagements" aria-labelledby="ts-engagements-title">
+  <div class="container">
+    <header class="ts-engagements__header">
+      {% if include.eyebrow %}<span class="eyebrow text-accent">{{ include.eyebrow }}</span>{% endif %}
+      <h2 id="ts-engagements-title" class="heading-2 text-primary">{{ include.title | default: "Flexible Ways to Work Together" }}</h2>
+      {% if include.summary %}<p class="lead">{{ include.summary }}</p>{% endif %}
+    </header>
+
+    <div class="ts-engagements__grid" role="list">
+      {% for card in cards %}
+        <article class="ts-engagement-card" role="listitem">
+          {% if card.tags %}
+            <div class="ts-engagement-card__tags" aria-label="Engagement tags">
+              {% for tag in card.tags %}
+                <span class="ts-engagement-card__chip">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <h3 class="heading-3">{{ card.title }}</h3>
+          {% if card.summary %}<p class="ts-engagement-card__summary">{{ card.summary }}</p>{% endif %}
+
+          {% if card.bullets %}
+          <ul class="ts-engagement-card__list">
+            {% for item in card.bullets %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          <div class="ts-engagement-card__footer">
+            {% if card.rate %}<p class="ts-engagement-card__rate">{{ card.rate }}</p>{% endif %}
+            {% if card.cta_url %}
+              <a class="btn btn--ghost" href="{{ card.cta_url }}">{{ card.cta_label | default: "Request Details" }}</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
