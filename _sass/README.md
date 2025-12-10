@@ -5,7 +5,7 @@ This directory contains the modular SCSS source files for the Tillerstead websit
 ## Directory Structure
 
 ```
-src/scss/
+_sass/
 ├── _common.scss              # Base styles, reset, typography
 ├── theme.scss                # Main entry point (imports all modules)
 ├── components/               # UI Components
@@ -35,7 +35,7 @@ npm run build:css
 npm run watch:css
 ```
 
-This compiles `src/scss/theme.scss` into `assets/css/theme-compiled.css`.
+This compiles `_sass/theme.scss` into `assets/css/theme-compiled.css`.
 
 ## Design Tokens
 
@@ -44,7 +44,7 @@ All design tokens (colors, spacing, typography, etc.) are defined in `src/styles
 ## Making Changes
 
 1. **Never edit `assets/css/theme-compiled.css` directly** - it's auto-generated
-2. Edit files in `src/scss/` instead
+2. Edit files in `_sass/` instead
 3. Run `npm run build:css` to compile
 4. The compiled CSS is committed to the repository for deployment
 

@@ -37,7 +37,7 @@ A fast, client-safe static site for Tillerstead LLC, built with Jekyll and a han
 
 ## At a Glance
 - **Platform:** Jekyll static site with custom layouts and includes—no third-party themes.
-- **Styling:** SCSS sources in [`src/scss`](src/scss) compiled to [`assets/css`](assets/css).
+- **Styling:** SCSS sources in [`_sass`](./_sass) compiled to [`assets/css`](assets/css).
 - **Content:** Markdown posts and pages in [`_posts`](./_posts) and [`pages`](./pages) with data-driven sections in [`_data`](./_data).
 - **Templates:** Layouts and shared fragments live in [`_layouts`](./_layouts) and [`_includes`](./_includes).
 - **Performance & SEO:** Minified CSS, sitemap, robots directives, and tightly written meta data in [`_config.yml`](./_config.yml) and [`manifest.webmanifest`](./manifest.webmanifest).
@@ -59,7 +59,7 @@ A fast, client-safe static site for Tillerstead LLC, built with Jekyll and a han
 4. Visit `http://127.0.0.1:4000` to preview.
 
 ## Development Workflow
-- **Style changes:** Edit `src/scss/theme.scss` (and partials) then run `npm run watch:css` during development or `npm run build:css` for a one-off build.
+- **Style changes:** Edit `_sass/theme.scss` (and partials) then run `npm run watch:css` during development or `npm run build:css` for a one-off build.
 - **Content updates:** Add or edit Markdown files in `_posts/` for dated content or `pages/` for evergreen pages. Use `_data/` YAML/JSON for repeatable content blocks.
 - **Templates:** Modify `_layouts/` for page-level wrappers and `_includes/` for reusable fragments (headers, footers, CTAs).
 - **Images:** Use `npm run images:webp` to generate WebP variants in-place under `assets/`.
@@ -84,7 +84,7 @@ A fast, client-safe static site for Tillerstead LLC, built with Jekyll and a han
 ## Project Structure
 ```
 assets/           # Compiled and static assets (CSS, images, fonts)
-src/scss/         # Source SCSS for the design system
+_sass/            # Source SCSS for the design system
 _includes/        # Reusable HTML partials (navigation, footer, CTAs)
 _layouts/         # Page and post layout templates
 _posts/           # Blog or update entries (Markdown)

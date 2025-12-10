@@ -1,6 +1,0 @@
-[build]
-  command = "npm run build:site"
-  publish = "_site"
-
-[build.environment]
-  RUBY_VERSION = "3.2.2"
