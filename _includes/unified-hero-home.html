@@ -1,29 +1,83 @@
-<!-- Dedicated homepage hero (static content) -->
-<header class="hero hero--center bg-surface-elevated shadow-lift" aria-label="Tillerstead LLC Hero">
-  <div class="container hero__content hero__content--center p-6" style="max-width: 700px;">
-    <div class="hero__cred-bar mb-4">
-      <span class="eyebrow hero__cred-badge rounded-pill bg-accent text-surface px-3 py-1" style="font-size: 0.95rem; letter-spacing: 0.05em;">
-        LICENSED NJ HOME IMPROVEMENT CONTRACTOR
-      </span>
-    </div>
-    <h1 class="heading-1 text-primary hero__title mb-3" style="line-height: 1.1;">
-      Precision Tile, Remodeling &amp; Property Care in South Jersey
-    </h1>
-    <p class="lead text-muted hero__lead mb-5" style="max-width: 600px;">
-      Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and
-      businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.
-    </p>
-    <section class="hero__stats-panel mb-6" aria-label="Credentials and guarantees">
-      <ul class="hero__stats-list" style="list-style: none; padding: 0; margin: 0;">
-        <li class="mb-2"><strong class="text-accent">Documentation:</strong> 100% written scopes, waterproofing details &amp; change orders</li>
-        <li class="mb-2"><strong class="text-accent">Response time:</strong> &lt;24 hours for active clients</li>
-        <li class="mb-2"><strong class="text-accent">Licensing:</strong> NJ HIC #13VH10808800, fully insured</li>
-        <li><strong class="text-accent">Satisfaction:</strong> 5-star client reviews (Thumbtack &amp; Google)</li>
-      </ul>
-    </section>
-    <nav class="hero__actions hero__actions--center flex gap-4" aria-label="Primary actions">
-      <a class="btn btn--primary rounded-lg px-5 py-2" href="{{ '/contact/' | relative_url }}">Request a consultation</a>
-      <a class="btn btn--ghost rounded-lg px-5 py-2" href="{{ '/portfolio/' | relative_url }}">View recent work</a>
-    </nav>
+<!-- Dedicated homepage hero with elevated visual system -->
+<header class="hero hero--aurora" aria-labelledby="home-hero-title">
+  <div class="hero__background" aria-hidden="true">
+    <span class="hero__orb hero__orb--one"></span>
+    <span class="hero__orb hero__orb--two"></span>
+    <span class="hero__gridlines"></span>
   </div>
+
+  <div class="container hero__shell">
+    <div class="hero__intro">
+      <span class="hero__badge">Licensed · Insured · NJ HIC #13VH10808800</span>
+      <h1 id="home-hero-title">Owner-led tile, remodeling, and property care with shore-proof detailing.</h1>
+      <p class="hero__lead">
+        Waterproof tile assemblies, thoughtful remodels, and proactive maintenance—documented from first walkthrough to closeout so
+        shore homes, rentals, and retail spaces stay resilient in Atlantic, Ocean, and Cape May Counties.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Book a consult</a>
+        <a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">See recent work</a>
+        <div class="hero__contact-chip">
+          <span>Direct line</span>
+          <a href="tel:+16098628808">(609) 862-8808</a>
+        </div>
+      </div>
+
+      <dl class="hero__cred-list" aria-label="Service highlights">
+        <div>
+          <dt>Documentation</dt>
+          <dd>100% written scopes, photo logs, and change orders.</dd>
+        </div>
+        <div>
+          <dt>Scheduling</dt>
+          <dd>Owner-managed calendars with readiness checklists.</dd>
+        </div>
+        <div>
+          <dt>Coverage</dt>
+          <dd>Tile, remodeling, maintenance, and day-rate punch work.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <aside class="hero__panel" aria-label="Trusted delivery">
+      <p class="hero__panel-eyebrow">Owner operated</p>
+      <h2>Hi, I'm Tyler.</h2>
+      <p>
+        I plan, install, and maintain every scope personally—coordinating subs only when a licensed trade is required. You always know
+        who is on site, what materials are being installed, and when each phase is ready for inspection.
+      </p>
+      <ul class="hero__panel-list">
+        <li>ANSI A118.10 waterproof systems + Schluter, Ardex, Laticrete.</li>
+        <li>Daily status notes for GC partners and remote owners.</li>
+        <li>Transparent pricing: fixed proposals, per-scope, or day-rate support.</li>
+      </ul>
+      <div class="hero__panel-footer">
+        <span class="hero__signature">Tyler Moubray · Principal</span>
+        <span class="hero__service-area">Serving Atlantic, Ocean &amp; Cape May Counties</span>
+      </div>
+    </aside>
+  </div>
+
+  <ul class="hero__stats" aria-label="Key results">
+    <li>
+      <span class="hero__stat-label">Waterproof builds</span>
+      <span class="hero__stat-value">65+</span>
+      <span class="hero__stat-note">Showers, baths, and large-format floors rebuilt since 2020.</span>
+    </li>
+    <li>
+      <span class="hero__stat-label">Maintenance response</span>
+      <span class="hero__stat-value">&lt;24 hrs</span>
+      <span class="hero__stat-note">Priority slots reserved for monthly plan clients year-round.</span>
+    </li>
+    <li>
+      <span class="hero__stat-label">GC &amp; designer partners</span>
+      <span class="hero__stat-value">18</span>
+      <span class="hero__stat-note">Builders rely on Tillerstead for tile packages and punch support.</span>
+    </li>
+    <li>
+      <span class="hero__stat-label">Documentation</span>
+      <span class="hero__stat-value">100%</span>
+      <span class="hero__stat-note">Scopes, change orders, and completion reports delivered in writing.</span>
+    </li>
+  </ul>
 </header>
