@@ -1,101 +1,70 @@
 /* ============================================
-   Tillerstead Design Tokens
-   Single source of truth for all visual properties
-   ============================================ */
+  Tillerstead Design Tokens
+  Emerald + Cool Navy palette
+  ============================================ */
 
 :root {
   /* ===========================
-     Color Tokens (Refactored)
-     Light: Parchment/Khaki base
-     Dark Accents: Emerald bright + Brass/Black depth
-     =========================== */
-  
-  /* Brand Colors - Vibrant Emerald on Parchment */
-  --color-emerald: #0bbf84;           /* Vibrant emerald - energetic with crisp contrast */
-  --color-emerald-strong: #0a9d6c;    /* Deep emerald for hover/active depth */
-  --color-emerald-soft: rgba(11, 191, 132, 0.14);
-  --color-primary: var(--color-emerald);
-  --color-primary-strong: var(--color-emerald-strong);
-  --color-primary-soft: var(--color-emerald-soft);
-  --color-accent: #f4a740;            /* Radiant brass-gold for premium cues */
-  --color-accent-soft: rgba(244, 167, 64, 0.18);
-  --color-khaki: #e7eefc;             /* Airy parchment with a cool tint */
-  /* Brand Colors - Evergreen + Brass on Parchment */
-  --color-primary: #0d3b2c;           /* Evergreen base */
-  --color-primary-strong: #0a2c21;    /* Deeper evergreen for hover/active */
-  --color-primary-soft: rgba(13, 59, 44, 0.22);
-  --color-accent: #c99a3f;            /* Brass/gold accent */
-  --color-accent-soft: rgba(201, 154, 63, 0.28);
-  --color-khaki: #f1e7d4;             /* Warm parchment */
-  
-  /* Primary Background - Parchment with depth overlays */
-  --color-bg: #f4efe4;                /* Warm parchment canvas */
-  --color-surface: #fdfbf7;           /* Light surface for readability */
-  --color-surface-elevated: #f3ebdc;  /* Elevated panels */
-  --color-surface-muted: #e9dec9;     /* Section wash */
-  --color-surface-highlight: #e2d5be; /* Highlight tone */
-  
-  /* Dark Accent Layer - evergreen anchors */
-  --color-dark-primary: #152016;
-  --color-dark-secondary: #1f291d;
-  
-  /* Text Colors - strong contrast on parchment */
-  --color-heading: #171f14;
-  --color-text: #2a3226;
-  --color-text-muted: #3d4637;
-  --color-text-subtle: #58614f;
+    Core Colors
+    =========================== */
+  --color-primary: #16c47f;           /* Emerald energy */
+  --color-primary-strong: #0fa868;    /* Darker emerald for hover states */
+  --color-primary-soft: rgba(22, 196, 127, 0.22);
+  --color-accent: #d8b25a;            /* Brushed brass */
+  --color-accent-soft: rgba(216, 178, 90, 0.26);
+  --color-khaki: #1b273b;             /* Deep slate neutral */
 
-  /* Border Colors - subtle brass/evergreen mix */
-  --color-border: rgba(23, 31, 20, 0.14);
-  --color-border-strong: rgba(23, 31, 20, 0.22);
-  --color-divider: rgba(23, 31, 20, 0.18);
+  /* Layered navy surfaces */
+  --color-bg: #050d19;
+  --color-surface: #071226;
+  --color-surface-elevated: #0c1e3a;
+  --color-surface-muted: #112749;
+  --color-surface-highlight: #1a325f;
+
+  /* Typography contrast */
+  --color-heading: #f7fbff;
+  --color-text: #d9e2f4;
+  --color-text-muted: #a9b8d5;
+  --color-text-subtle: #8794b4;
+
+  /* Borders & separators */
+  --color-border: rgba(134, 161, 199, 0.32);
+  --color-border-strong: rgba(134, 161, 199, 0.48);
+  --color-divider: rgba(134, 161, 199, 0.28);
 
   /* ===========================
-     Gradient Definitions (Refactored)
-     =========================== */
-  
-  /* Primary brand gradient - Evergreen depth */
-  --gradient-primary: linear-gradient(135deg, #0f4633 0%, #0a2f23 100%);
-  --gradient-accent: linear-gradient(135deg, #c99a3f 0%, #d7b257 100%);
-  
-  /* Surface gradients - subtle sacred depth */
-  --gradient-surface: radial-gradient(circle at 18% 20%, rgba(201, 154, 63, 0.08), transparent 38%),
-                      radial-gradient(circle at 82% 8%, rgba(13, 59, 44, 0.08), transparent 40%),
-                      #f4efe4;
-  --gradient-surface-alt: radial-gradient(circle at 12% 40%, rgba(13, 59, 44, 0.06), transparent 35%),
-                          radial-gradient(circle at 88% 70%, rgba(201, 154, 63, 0.06), transparent 45%),
-                          #f3ebdc;
-  --gradient-section: linear-gradient(180deg, #f4efe4 0%, #e9dec9 100%);
-  
-  /* Radial accents - minimal */
-  --gradient-radial-primary: radial-gradient(circle at top right, rgba(13, 59, 44, 0.12), transparent 52%);
-  --gradient-radial-accent: radial-gradient(circle at bottom left, rgba(201, 154, 63, 0.12), transparent 52%);
+    Gradients & Lighting
+    =========================== */
+  --gradient-primary: linear-gradient(135deg, #0d413a 0%, #05121c 100%);
+  --gradient-accent: linear-gradient(135deg, #d8b25a 0%, #f3c97e 100%);
+  --gradient-surface: radial-gradient(circle at 14% 18%, rgba(26, 200, 122, 0.32), transparent 45%),
+               radial-gradient(circle at 86% 12%, rgba(48, 101, 255, 0.18), transparent 52%),
+               var(--color-bg);
+  --gradient-surface-alt: radial-gradient(circle at 20% 62%, rgba(26, 200, 122, 0.24), transparent 48%),
+                  radial-gradient(circle at 82% 78%, rgba(82, 134, 255, 0.16), transparent 55%),
+                  var(--color-surface-elevated);
+  --gradient-section: linear-gradient(180deg, #050d19 0%, #0f223f 100%);
+  --gradient-radial-primary: radial-gradient(circle at top left, rgba(26, 200, 122, 0.38), transparent 65%);
+  --gradient-radial-accent: radial-gradient(circle at bottom right, rgba(5, 17, 36, 0.82), transparent 65%);
 
   /* ===========================
-     Background Pattern Assets
-     =========================== */
-  
-  /* Sacred geometry tile pattern - dark mode optimized */
+    Textures & Patterns
+    =========================== */
   --bg-pattern: url("/assets/img/patterns/sacred-geometry-tile.webp");
   --bg-pattern-fallback: url("/assets/img/patterns/sacred-geometry-tile.png");
   --bg-pattern-svg: url("/assets/img/patterns/sacred-geometry-tile.svg");
   --hero-texture: url("/assets/img/marble-bath.jpg");
   --hero-texture-size: cover;
-  --hero-texture-opacity: 0.28;
-  
-  /* Pattern display properties */
+  --hero-texture-opacity: 0.22;
   --bg-pattern-size: 200px;
-  --bg-pattern-opacity: 0.18;
+  --bg-pattern-opacity: 0.14;
 
   /* ===========================
-     Typography Tokens
-     =========================== */
-  
-  /* Font Families */
+    Typography Tokens
+    =========================== */
   --font-sans: "Inter", "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-  /* Font Sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -106,21 +75,18 @@
   --font-size-4xl: 2.5rem;
   --font-size-5xl: 3rem;
 
-  /* Line Heights */
   --line-height-base: 1.65;
   --line-height-tight: 1.35;
   --line-height-relaxed: 1.85;
 
-  /* Heading Sizes (responsive with clamp) */
   --heading-1: clamp(2.75rem, 4vw, 3.5rem);
   --heading-2: clamp(2.1rem, 3vw, 2.75rem);
   --heading-3: clamp(1.5rem, 2.5vw, 2rem);
   --heading-4: clamp(1.2rem, 2vw, 1.45rem);
 
   /* ===========================
-     Spacing Scale
-     =========================== */
-  
+    Spacing & Radii
+    =========================== */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -132,10 +98,6 @@
   --space-10: 4rem;
   --space-12: 5rem;
 
-  /* ===========================
-     Border Radius
-     =========================== */
-  
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
@@ -143,49 +105,36 @@
   --radius-pill: 999px;
 
   /* ===========================
-     Shadows (Minimal + Depth)
-     =========================== */
-  
-   /* Subtle shadows for light theme - depth without heaviness */
-   --shadow-soft: 0 8px 24px rgba(16, 35, 61, 0.08);
-   --shadow-lift: 0 16px 40px rgba(16, 35, 61, 0.12);
-   --shadow-sharp: 0 20px 48px rgba(16, 35, 61, 0.16);
-   --shadow-button: 0 4px 12px rgba(0, 168, 107, 0.15);
-   --shadow-button-hover: 0 8px 20px rgba(0, 168, 107, 0.25);
-   --shadow-glow: 0 0 12px rgba(0, 168, 107, 0.2);
-   --shadow-glow-accent: 0 0 12px rgba(139, 111, 71, 0.15);
+    Shadows & Motion
+    =========================== */
+  --shadow-soft: 0 24px 48px rgba(5, 16, 35, 0.5);
+  --shadow-lift: 0 32px 64px rgba(5, 16, 35, 0.6);
+  --shadow-sharp: 0 20px 50px rgba(0, 0, 0, 0.65);
+  --shadow-button: 0 12px 25px rgba(12, 209, 132, 0.3);
+  --shadow-button-hover: 0 16px 30px rgba(12, 209, 132, 0.45);
+  --shadow-glow: 0 0 25px rgba(20, 207, 139, 0.35);
+  --shadow-glow-accent: 0 0 22px rgba(216, 178, 90, 0.3);
 
-  /* ===========================
-     Transitions
-     =========================== */
-  
   --transition-fast: 150ms ease;
   --transition-med: 220ms ease;
   --transition-slow: 350ms ease;
 
   /* ===========================
-     Layout
-     =========================== */
-
+    Layout helpers
+    =========================== */
   --shell-width: 1140px;
   --section-padding-y: clamp(3rem, 6vw, 5rem);
   --section-gap: clamp(1.5rem, 3vw, 2.5rem);
-  --focus-ring: 0 0 0 3px rgba(13, 59, 44, 0.35);
-
-  /* ===========================
-     Component-Specific Aliases
-     =========================== */
-  /* Header/Nav backgrounds & borders for sitewide consistency */
-  --header-bg: rgba(244, 239, 228, 0.92); /* translucent parchment */
-  --header-border: rgba(23, 31, 20, 0.16);
-  --nav-bg: var(--color-surface-elevated);
-  --nav-border: rgba(23, 31, 20, 0.14);
+  --focus-ring: 0 0 0 3px rgba(26, 200, 122, 0.42);
+  --header-bg: rgba(5, 13, 25, 0.9);
+  --header-border: rgba(134, 161, 199, 0.28);
+  --nav-bg: rgba(7, 18, 38, 0.92);
+  --nav-border: rgba(134, 161, 199, 0.24);
 }
 
 /* ===========================
-   Light Mode Overrides
-   =========================== */
-
+  Optional light mode shell
+  =========================== */
 html.light {
   color-scheme: light;
   --color-bg: #f4efe4;
@@ -195,48 +144,40 @@ html.light {
   --color-surface-highlight: #e2d5be;
   --color-heading: #171f14;
   --color-text: #2a3226;
-  --color-text-muted: #3d4637; /* higher contrast */
-  --color-text-subtle: #58614f; /* retain gentle hierarchy */
-  --color-border: rgba(23, 31, 20, 0.14);
-  --color-border-strong: rgba(23, 31, 20, 0.22);
+  --color-text-muted: #3d4637;
+  --color-text-subtle: #58614f;
+  --color-border: rgba(23, 31, 20, 0.18);
+  --color-border-strong: rgba(23, 31, 20, 0.28);
   --color-divider: rgba(23, 31, 20, 0.18);
-  --shadow-soft: 0 8px 24px rgba(23, 31, 20, 0.08);
-  --shadow-lift: 0 16px 40px rgba(23, 31, 20, 0.12);
-  --shadow-sharp: 0 20px 48px rgba(23, 31, 20, 0.16);
-  --focus-ring: 0 0 0 3px rgba(13, 59, 44, 0.32);
-  
-  /* Background pattern - light mode variant */
   --bg-pattern-opacity: 0.08;
+  --shadow-soft: 0 8px 24px rgba(23, 31, 20, 0.18);
+  --shadow-lift: 0 16px 40px rgba(23, 31, 20, 0.22);
+  --shadow-sharp: 0 20px 48px rgba(23, 31, 20, 0.28);
 }
 
 /* ============================================
-   Utility Classes
-   ============================================ */
-
-/* Typography Utilities */
+  Utility Classes
+  ============================================ */
 .heading-1 { font-size: var(--heading-1); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
 .heading-2 { font-size: var(--heading-2); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
 .heading-3 { font-size: var(--heading-3); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
 .heading-4 { font-size: var(--heading-4); font-weight: 700; line-height: 1.2; color: var(--color-heading); }
 
 .text-primary { color: var(--color-primary) !important; }
-.text-accent { color: var(--color-heading) !important; }
+.text-accent { color: var(--color-accent) !important; }
 .text-muted { color: var(--color-text-muted) !important; }
 .text-subtle { color: var(--color-text-subtle) !important; }
 
-/* Background Utilities */
 .bg-primary { background: var(--color-primary) !important; }
 .bg-accent { background: var(--color-accent) !important; }
 .bg-surface { background: var(--color-surface) !important; }
 .bg-surface-elevated { background: var(--color-surface-elevated) !important; }
 
-/* Gradient Utilities */
 .bg-gradient { background: var(--gradient-primary) !important; }
 .bg-gradient-accent { background: var(--gradient-accent) !important; }
 .bg-gradient-surface { background: var(--gradient-surface) !important; }
 .bg-gradient-radial { background: var(--gradient-radial-primary) !important; }
 
-/* Spacing Utilities */
 .mt-1 { margin-top: var(--space-1) !important; }
 .mt-2 { margin-top: var(--space-2) !important; }
 .mt-3 { margin-top: var(--space-3) !important; }
@@ -258,7 +199,6 @@ html.light {
 .p-5 { padding: var(--space-5) !important; }
 .p-6 { padding: var(--space-6) !important; }
 
-/* Modern Logical Property Utilities (for better internationalization) */
 .mbs-1 { margin-block-start: var(--space-1) !important; }
 .mbs-2 { margin-block-start: var(--space-2) !important; }
 .mbs-3 { margin-block-start: var(--space-3) !important; }
@@ -279,7 +219,6 @@ html.light {
 .p-block-3 { padding-block: var(--space-3) !important; }
 .p-block-4 { padding-block: var(--space-4) !important; }
 
-/* Border Utilities */
 .border { border: 1px solid var(--color-border) !important; }
 .border-strong { border: 1px solid var(--color-border-strong) !important; }
 
@@ -289,7 +228,6 @@ html.light {
 .rounded-xl { border-radius: var(--radius-xl) !important; }
 .rounded-pill { border-radius: var(--radius-pill) !important; }
 
-/* Shadow Utilities */
 .shadow-soft { box-shadow: var(--shadow-soft) !important; }
 .shadow-lift { box-shadow: var(--shadow-lift) !important; }
 .shadow-sharp { box-shadow: var(--shadow-sharp) !important; }
