@@ -131,8 +131,7 @@
 <!-- Design tokens always come first -->
 <link rel="stylesheet" href="{{ '/assets/styles/tokens.css' | relative_url }}" media="screen">
 
-<!-- Page + theme layers (home.css then theme.css, then every remaining stylesheet to guarantee full coverage) -->
-<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}" media="screen">
+<!-- Page + theme layers (tokens first, then global theme stack) -->
 <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}" media="screen">
 <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}" media="screen">
 <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}" media="screen">
@@ -142,6 +141,15 @@
 <link rel="stylesheet" href="{{ '/assets/css/gallery.css' | relative_url }}" media="screen">
 <link rel="stylesheet" href="{{ '/assets/css/pattern-showcase.css' | relative_url }}" media="screen">
 <link rel="stylesheet" href="{{ '/assets/css/construction-banner.css' | relative_url }}" media="screen">
+
+<!-- Homepage overrides: load after global stack so aurora theme wins -->
+{% assign is_home_page = page.is_home %}
+{% if page.url == '/' or page.url == '/index.html' or page.layout == 'home' %}
+  {% assign is_home_page = true %}
+{% endif %}
+{% if is_home_page %}
+  <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}" media="screen">
+{% endif %}
 
 <!-- Page-Specific Styles -->
 {% if page.styles %}

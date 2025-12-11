@@ -2,7 +2,12 @@
 Legacy hero include now routes to dedicated homepage or page-aware unified heroes.
 {% endcomment %}
 
-{% if page.is_home %}
+{% assign is_home_page = page.is_home %}
+{% if page.url == '/' or page.url == '/index.html' or page.layout == 'home' %}
+  {% assign is_home_page = true %}
+{% endif %}
+
+{% if is_home_page %}
   {% include unified-hero-home.html %}
 {% else %}
   {% include unified-hero.html %}
