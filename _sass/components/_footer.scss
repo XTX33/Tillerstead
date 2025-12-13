@@ -233,3 +233,47 @@
     text-align: center;
   }
 }
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.footer-nav-title {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
+.footer-nav-title--spaced {
+  margin-top: 16px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li + li {
+  margin-top: 8px;
+}
+
+.footer-list--inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.footer-list--inline li + li {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .footer-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
